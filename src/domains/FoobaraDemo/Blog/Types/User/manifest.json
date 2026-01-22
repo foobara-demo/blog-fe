@@ -1,0 +1,97 @@
+{
+  "scoped_path": [
+    "User"
+  ],
+  "scoped_name": "User",
+  "scoped_short_name": "User",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog",
+    "User"
+  ],
+  "scoped_full_name": "FoobaraDemo::Blog::User",
+  "scoped_category": "type",
+  "reference": "FoobaraDemo::Blog::User",
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::Blog"
+  ],
+  "declaration_data": {
+    "type": "entity",
+    "name": "User",
+    "model_module": "FoobaraDemo::Blog",
+    "model_class": "FoobaraDemo::Blog::User",
+    "model_base_class": "Foobara::Entity",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "id": "integer",
+        "full_name": "string",
+        "blog_slug": "string",
+        "bio": {
+          "description": "Bio in Markdown",
+          "type": "string"
+        }
+      },
+      "required": [
+        "full_name"
+      ],
+      "defaults": {
+        "bio": ""
+      }
+    },
+    "primary_key": "id"
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "User",
+  "target_classes": [
+    "FoobaraDemo::Blog::User"
+  ],
+  "types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "entity",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "entity",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "id": "integer",
+      "full_name": "string",
+      "blog_slug": "string",
+      "bio": {
+        "description": "Bio in Markdown",
+        "type": "string"
+      }
+    },
+    "required": [
+      "full_name"
+    ],
+    "defaults": {
+      "bio": ""
+    }
+  },
+  "organization_name": "FoobaraDemo",
+  "domain_name": "Blog",
+  "model_name": "User",
+  "model_base_class": "Foobara::Entity",
+  "model_class": "FoobaraDemo::Blog::User",
+  "entity_name": "User",
+  "primary_key_attribute": "id",
+  "primary_key_type": "integer"
+}

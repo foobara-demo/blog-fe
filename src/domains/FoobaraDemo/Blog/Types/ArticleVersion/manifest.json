@@ -1,0 +1,104 @@
+{
+  "scoped_path": [
+    "ArticleVersion"
+  ],
+  "scoped_name": "ArticleVersion",
+  "scoped_short_name": "ArticleVersion",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog",
+    "ArticleVersion"
+  ],
+  "scoped_full_name": "FoobaraDemo::Blog::ArticleVersion",
+  "scoped_category": "type",
+  "reference": "FoobaraDemo::Blog::ArticleVersion",
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::Blog"
+  ],
+  "declaration_data": {
+    "type": "entity",
+    "name": "ArticleVersion",
+    "model_module": "FoobaraDemo::Blog",
+    "model_class": "FoobaraDemo::Blog::ArticleVersion",
+    "model_base_class": "Foobara::Entity",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "id": "integer",
+        "title": "string",
+        "body": {
+          "description": "The body of the article in Markdown",
+          "type": "string"
+        },
+        "created_at": "datetime",
+        "modified_at": "datetime"
+      },
+      "defaults": {
+        "title": "",
+        "body": ""
+      },
+      "required": [
+        "created_at",
+        "modified_at"
+      ]
+    },
+    "primary_key": "id"
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "ArticleVersion",
+  "target_classes": [
+    "FoobaraDemo::Blog::ArticleVersion"
+  ],
+  "types_depended_on": [
+    "array",
+    "attributes",
+    "datetime",
+    "duck",
+    "entity",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "entity",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "id": "integer",
+      "title": "string",
+      "body": {
+        "description": "The body of the article in Markdown",
+        "type": "string"
+      },
+      "created_at": "datetime",
+      "modified_at": "datetime"
+    },
+    "defaults": {
+      "title": "",
+      "body": ""
+    },
+    "required": [
+      "created_at",
+      "modified_at"
+    ]
+  },
+  "organization_name": "FoobaraDemo",
+  "domain_name": "Blog",
+  "model_name": "ArticleVersion",
+  "model_base_class": "Foobara::Entity",
+  "model_class": "FoobaraDemo::Blog::ArticleVersion",
+  "entity_name": "ArticleVersion",
+  "primary_key_attribute": "id",
+  "primary_key_type": "integer"
+}

@@ -1,0 +1,118 @@
+{
+  "scoped_path": [
+    "User"
+  ],
+  "scoped_name": "User",
+  "scoped_short_name": "User",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "BlogAuth",
+    "User"
+  ],
+  "scoped_full_name": "FoobaraDemo::BlogAuth::User",
+  "scoped_category": "type",
+  "reference": "FoobaraDemo::BlogAuth::User",
+  "domain": "FoobaraDemo::BlogAuth",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::BlogAuth"
+  ],
+  "declaration_data": {
+    "type": "detached_entity",
+    "name": "User",
+    "model_module": "FoobaraDemo::BlogAuth",
+    "model_class": "FoobaraDemo::BlogAuth::User",
+    "model_base_class": "Foobara::DetachedEntity",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "id": "integer",
+        "blog_user": "FoobaraDemo::Blog::User",
+        "auth_user": "Foobara::Auth::Types::User",
+        "username": "string",
+        "email": {
+          "allow_nil": true,
+          "type": "email"
+        },
+        "full_name": "string",
+        "blog_slug": "string"
+      },
+      "required": [
+        "auth_user",
+        "blog_user"
+      ]
+    },
+    "primary_key": "id"
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "User",
+  "target_classes": [
+    null
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::Types::User",
+    "FoobaraDemo::Blog::User",
+    "array",
+    "attributes",
+    "detached_entity",
+    "duck",
+    "email",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "detached_entity",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "id": "integer",
+      "blog_user": "FoobaraDemo::Blog::User",
+      "auth_user": "Foobara::Auth::Types::User",
+      "username": "string",
+      "email": {
+        "allow_nil": true,
+        "type": "email"
+      },
+      "full_name": "string",
+      "blog_slug": "string"
+    },
+    "required": [
+      "auth_user",
+      "blog_user"
+    ]
+  },
+  "organization_name": "FoobaraDemo",
+  "domain_name": "BlogAuth",
+  "model_name": "User",
+  "model_base_class": "Foobara::DetachedEntity",
+  "model_class": "FoobaraDemo::BlogAuth::User",
+  "depends_on": [
+    "FoobaraDemo::Blog::User",
+    "Foobara::Auth::Types::Role"
+  ],
+  "deep_depends_on": [
+    "FoobaraDemo::Blog::User",
+    "Foobara::Auth::Types::Role"
+  ],
+  "associations": {
+    "auth_user.roles.#": "Foobara::Auth::Types::Role",
+    "blog_user": "FoobaraDemo::Blog::User"
+  },
+  "deep_associations": {
+    "auth_user.roles.#": "Foobara::Auth::Types::Role",
+    "blog_user": "FoobaraDemo::Blog::User"
+  },
+  "entity_name": "User",
+  "primary_key_attribute": "id",
+  "primary_key_type": "integer"
+}

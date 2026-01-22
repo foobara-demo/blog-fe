@@ -1,0 +1,186 @@
+{
+  "scoped_path": [
+    "Types",
+    "ApiKeySummary"
+  ],
+  "scoped_name": "Types::ApiKeySummary",
+  "scoped_short_name": "ApiKeySummary",
+  "scoped_prefix": [
+    "Types"
+  ],
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "Types",
+    "ApiKeySummary"
+  ],
+  "scoped_full_name": "Foobara::Auth::Types::ApiKeySummary",
+  "scoped_category": "type",
+  "reference": "Foobara::Auth::Types::ApiKeySummary",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "declaration_data": {
+    "type": "model",
+    "name": "Types::ApiKeySummary",
+    "model_module": "Foobara::Auth",
+    "model_class": "Foobara::Auth::Types::ApiKeySummary",
+    "model_base_class": "Foobara::Model",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "token_id": "string",
+        "state": "Foobara::Auth::token_state",
+        "expires_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "created_at": "datetime"
+      },
+      "required": [
+        "created_at",
+        "state",
+        "token_id"
+      ],
+      "defaults": {
+        "state": "needs_approval"
+      }
+    }
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.created_at.cannot_cast": {
+      "path": [
+        "created_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.created_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.created_at.missing_required_attribute": {
+      "path": [
+        "created_at"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.created_at.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.expires_at.cannot_cast": {
+      "path": [
+        "expires_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.expires_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.missing_required_attribute": {
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.state.cannot_cast": {
+      "path": [
+        "state"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.state.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.state.missing_required_attribute": {
+      "path": [
+        "state"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.state.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.state.value_not_valid": {
+      "path": [
+        "state"
+      ],
+      "category": "data",
+      "symbol": "value_not_valid",
+      "key": "data.state.value_not_valid",
+      "error": "duck::SupportedValidators::OneOf::ValueNotValidError"
+    },
+    "data.token_id.cannot_cast": {
+      "path": [
+        "token_id"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.token_id.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.token_id.missing_required_attribute": {
+      "path": [
+        "token_id"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.token_id.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    }
+  },
+  "name": "Types::ApiKeySummary",
+  "target_classes": [
+    "Foobara::Auth::Types::ApiKeySummary"
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::token_state",
+    "array",
+    "attributes",
+    "datetime",
+    "duck",
+    "model",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "model",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "token_id": "string",
+      "state": "Foobara::Auth::token_state",
+      "expires_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "created_at": "datetime"
+    },
+    "required": [
+      "created_at",
+      "state",
+      "token_id"
+    ],
+    "defaults": {
+      "state": "needs_approval"
+    }
+  },
+  "organization_name": "Foobara",
+  "domain_name": "Auth",
+  "model_name": "Types::ApiKeySummary",
+  "model_base_class": "Foobara::Model",
+  "model_class": "Foobara::Auth::Types::ApiKeySummary"
+}

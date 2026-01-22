@@ -1,0 +1,125 @@
+{
+  "scoped_path": [
+    "RefreshLogin"
+  ],
+  "scoped_name": "RefreshLogin",
+  "scoped_short_name": "RefreshLogin",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "RefreshLogin"
+  ],
+  "scoped_full_name": "Foobara::Auth::RefreshLogin",
+  "scoped_category": "command",
+  "reference": "Foobara::Auth::RefreshLogin",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::token_state",
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "inputs_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "result_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "errors_types_depended_on": [
+    "Foobara::Auth::token_state",
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "foobara::auth::verify_token>runtime.expired_token": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "expired_token",
+      "key": "foobara::auth::verify_token>runtime.expired_token",
+      "error": "Foobara::Auth::VerifyToken::ExpiredTokenError"
+    },
+    "foobara::auth::verify_token>runtime.inactive_token": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "inactive_token",
+      "key": "foobara::auth::verify_token>runtime.inactive_token",
+      "error": "Foobara::Auth::VerifyToken::InactiveTokenError"
+    },
+    "foobara::auth::verify_token>runtime.token_does_not_exist": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "token_does_not_exist",
+      "key": "foobara::auth::verify_token>runtime.token_does_not_exist",
+      "error": "Foobara::Auth::VerifyToken::TokenDoesNotExistError"
+    },
+    "runtime.invalid_refresh_token": {
+      "category": "runtime",
+      "symbol": "invalid_refresh_token",
+      "key": "runtime.invalid_refresh_token",
+      "error": "Foobara::Auth::RefreshLogin::InvalidRefreshTokenError"
+    }
+  },
+  "depends_on": [
+    "Foobara::Auth::BuildAccessToken",
+    "Foobara::Auth::CreateRefreshToken",
+    "Foobara::Auth::VerifyToken"
+  ],
+  "inputs_type": {
+    "type": "attributes",
+    "element_type_declarations": {}
+  },
+  "description": null,
+  "result_type": {
+    "type": "attributes",
+    "element_type_declarations": {}
+  },
+  "inputs_transformers": [
+    "refresh_token"
+  ],
+  "serializers": [
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+  ],
+  "response_mutators": [
+    "Foobara::AuthHttp::MoveRefreshTokenToCookie",
+    "Foobara::AuthHttp::MoveAccessTokenToHeader"
+  ],
+  "request_mutators": [
+    "Foobara::AuthHttp::SetRefreshTokenFromCookie"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "scoped_path": [
+    "Logout"
+  ],
+  "scoped_name": "Logout",
+  "scoped_short_name": "Logout",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "Logout"
+  ],
+  "scoped_full_name": "Foobara::Auth::Logout",
+  "scoped_category": "command",
+  "reference": "Foobara::Auth::Logout",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::token_state",
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "inputs_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "result_types_depended_on": [
+    "array",
+    "attributes",
+    "symbol"
+  ],
+  "errors_types_depended_on": [
+    "Foobara::Auth::token_state",
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "foobara::auth::verify_token>runtime.expired_token": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "expired_token",
+      "key": "foobara::auth::verify_token>runtime.expired_token",
+      "error": "Foobara::Auth::VerifyToken::ExpiredTokenError"
+    },
+    "foobara::auth::verify_token>runtime.inactive_token": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "inactive_token",
+      "key": "foobara::auth::verify_token>runtime.inactive_token",
+      "error": "Foobara::Auth::VerifyToken::InactiveTokenError"
+    },
+    "foobara::auth::verify_token>runtime.token_does_not_exist": {
+      "runtime_path": [
+        "foobara::auth::verify_token"
+      ],
+      "category": "runtime",
+      "symbol": "token_does_not_exist",
+      "key": "foobara::auth::verify_token>runtime.token_does_not_exist",
+      "error": "Foobara::Auth::VerifyToken::TokenDoesNotExistError"
+    }
+  },
+  "depends_on": [
+    "Foobara::Auth::VerifyToken"
+  ],
+  "inputs_type": {
+    "type": "attributes",
+    "element_type_declarations": {}
+  },
+  "description": null,
+  "result_type": "duck",
+  "serializers": [
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+  ],
+  "response_mutators": [
+    "Foobara::AuthHttp::ClearAccessTokenHeader"
+  ],
+  "request_mutators": [
+    "Foobara::AuthHttp::SetRefreshTokenFromCookie"
+  ]
+}

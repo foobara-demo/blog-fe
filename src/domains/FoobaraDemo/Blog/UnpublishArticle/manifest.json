@@ -1,0 +1,147 @@
+{
+  "scoped_path": [
+    "UnpublishArticle"
+  ],
+  "scoped_name": "UnpublishArticle",
+  "scoped_short_name": "UnpublishArticle",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog",
+    "UnpublishArticle"
+  ],
+  "scoped_full_name": "FoobaraDemo::Blog::UnpublishArticle",
+  "scoped_category": "command",
+  "reference": "FoobaraDemo::Blog::UnpublishArticle",
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::Blog"
+  ],
+  "types_depended_on": [
+    "FoobaraDemo::Blog::Article",
+    "FoobaraDemo::Blog::ArticleVersion",
+    "FoobaraDemo::Blog::User",
+    "array",
+    "attributes",
+    "boolean",
+    "datetime",
+    "duck",
+    "entity",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "inputs_types_depended_on": [
+    "FoobaraDemo::Blog::Article",
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "result_types_depended_on": [
+    "FoobaraDemo::Blog::ArticleVersion",
+    "FoobaraDemo::Blog::User",
+    "array",
+    "attributes",
+    "boolean",
+    "datetime",
+    "duck",
+    "entity",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "errors_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "possible_errors": {
+    "data.article.cannot_cast": {
+      "path": [
+        "article"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.article.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.article.missing_required_attribute": {
+      "path": [
+        "article"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.article.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.article.not_found": {
+      "path": [
+        "article"
+      ],
+      "category": "data",
+      "symbol": "not_found",
+      "key": "data.article.not_found",
+      "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "manually_added": true
+    },
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.missing_required_attribute": {
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "runtime.not_allowed": {
+      "category": "runtime",
+      "symbol": "not_allowed",
+      "key": "runtime.not_allowed",
+      "error": "Foobara::CommandConnector::NotAllowedError"
+    },
+    "runtime.unauthenticated": {
+      "category": "runtime",
+      "symbol": "unauthenticated",
+      "key": "runtime.unauthenticated",
+      "error": "Foobara::CommandConnector::UnauthenticatedError"
+    }
+  },
+  "inputs_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "article": "FoobaraDemo::Blog::Article"
+    },
+    "required": [
+      "article"
+    ]
+  },
+  "description": null,
+  "result_type": "FoobaraDemo::Blog::Article",
+  "errors_transformers": [
+    "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+  ],
+  "serializers": [
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+  ],
+  "requires_authentication": true,
+  "authenticator": {
+    "symbol": "bearer_or_api_key",
+    "explanation": "Expects an access token in authorization header in format of: Bearer <token>, or Expects an api key to be passed in the x-api-key header"
+  }
+}

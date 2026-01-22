@@ -1,0 +1,165 @@
+{
+  "scoped_path": [
+    "Article"
+  ],
+  "scoped_name": "Article",
+  "scoped_short_name": "Article",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog",
+    "Article"
+  ],
+  "scoped_full_name": "FoobaraDemo::Blog::Article",
+  "scoped_category": "type",
+  "reference": "FoobaraDemo::Blog::Article",
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::Blog"
+  ],
+  "declaration_data": {
+    "type": "entity",
+    "name": "Article",
+    "model_module": "FoobaraDemo::Blog",
+    "model_class": "FoobaraDemo::Blog::Article",
+    "model_base_class": "Foobara::Entity",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "id": "integer",
+        "author": "FoobaraDemo::Blog::User",
+        "is_published": "boolean",
+        "current_published_version": {
+          "allow_nil": true,
+          "type": "FoobaraDemo::Blog::ArticleVersion"
+        },
+        "current_draft": {
+          "allow_nil": true,
+          "type": "FoobaraDemo::Blog::ArticleVersion"
+        },
+        "past_published_versions": {
+          "type": "array",
+          "element_type_declaration": "FoobaraDemo::Blog::ArticleVersion"
+        },
+        "published_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "unpublished_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "originally_published_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "last_edited_at": "datetime"
+      },
+      "required": [
+        "author"
+      ],
+      "defaults": {
+        "is_published": false,
+        "past_published_versions": []
+      }
+    },
+    "primary_key": "id"
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "Article",
+  "target_classes": [
+    "FoobaraDemo::Blog::Article"
+  ],
+  "types_depended_on": [
+    "FoobaraDemo::Blog::ArticleVersion",
+    "FoobaraDemo::Blog::User",
+    "array",
+    "attributes",
+    "boolean",
+    "datetime",
+    "duck",
+    "entity",
+    "integer",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "entity",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "id": "integer",
+      "author": "FoobaraDemo::Blog::User",
+      "is_published": "boolean",
+      "current_published_version": {
+        "allow_nil": true,
+        "type": "FoobaraDemo::Blog::ArticleVersion"
+      },
+      "current_draft": {
+        "allow_nil": true,
+        "type": "FoobaraDemo::Blog::ArticleVersion"
+      },
+      "past_published_versions": {
+        "type": "array",
+        "element_type_declaration": "FoobaraDemo::Blog::ArticleVersion"
+      },
+      "published_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "unpublished_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "originally_published_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "last_edited_at": "datetime"
+    },
+    "required": [
+      "author"
+    ],
+    "defaults": {
+      "is_published": false,
+      "past_published_versions": []
+    }
+  },
+  "organization_name": "FoobaraDemo",
+  "domain_name": "Blog",
+  "model_name": "Article",
+  "model_base_class": "Foobara::Entity",
+  "model_class": "FoobaraDemo::Blog::Article",
+  "depends_on": [
+    "FoobaraDemo::Blog::User",
+    "FoobaraDemo::Blog::ArticleVersion"
+  ],
+  "deep_depends_on": [
+    "FoobaraDemo::Blog::User",
+    "FoobaraDemo::Blog::ArticleVersion"
+  ],
+  "associations": {
+    "author": "FoobaraDemo::Blog::User",
+    "current_draft": "FoobaraDemo::Blog::ArticleVersion",
+    "current_published_version": "FoobaraDemo::Blog::ArticleVersion",
+    "past_published_versions.#": "FoobaraDemo::Blog::ArticleVersion"
+  },
+  "deep_associations": {
+    "author": "FoobaraDemo::Blog::User",
+    "current_draft": "FoobaraDemo::Blog::ArticleVersion",
+    "current_published_version": "FoobaraDemo::Blog::ArticleVersion",
+    "past_published_versions.#": "FoobaraDemo::Blog::ArticleVersion"
+  },
+  "entity_name": "Article",
+  "primary_key_attribute": "id",
+  "primary_key_type": "integer"
+}

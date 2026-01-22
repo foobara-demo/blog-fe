@@ -1,0 +1,129 @@
+{
+  "scoped_path": [
+    "DeleteApiKey"
+  ],
+  "scoped_name": "DeleteApiKey",
+  "scoped_short_name": "DeleteApiKey",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "DeleteApiKey"
+  ],
+  "scoped_full_name": "Foobara::Auth::DeleteApiKey",
+  "scoped_category": "command",
+  "reference": "Foobara::Auth::DeleteApiKey",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::Types::Token",
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "inputs_types_depended_on": [
+    "Foobara::Auth::Types::Token",
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "errors_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.missing_required_attribute": {
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.token.cannot_cast": {
+      "path": [
+        "token"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.token.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.token.missing_required_attribute": {
+      "path": [
+        "token"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.token.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.token.not_found": {
+      "path": [
+        "token"
+      ],
+      "category": "data",
+      "symbol": "not_found",
+      "key": "data.token.not_found",
+      "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "manually_added": true
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "runtime.not_allowed": {
+      "category": "runtime",
+      "symbol": "not_allowed",
+      "key": "runtime.not_allowed",
+      "error": "Foobara::CommandConnector::NotAllowedError"
+    },
+    "runtime.unauthenticated": {
+      "category": "runtime",
+      "symbol": "unauthenticated",
+      "key": "runtime.unauthenticated",
+      "error": "Foobara::CommandConnector::UnauthenticatedError"
+    }
+  },
+  "inputs_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "token": "Foobara::Auth::Types::Token"
+    },
+    "required": [
+      "token"
+    ]
+  },
+  "description": null,
+  "result_types_depended_on": [],
+  "result_type": null,
+  "errors_transformers": [
+    "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+  ],
+  "serializers": [
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+  ],
+  "requires_authentication": true,
+  "authenticator": {
+    "symbol": "bearer_or_api_key",
+    "explanation": "Expects an access token in authorization header in format of: Bearer <token>, or Expects an api key to be passed in the x-api-key header"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "scoped_path": [
+    "Types",
+    "Role"
+  ],
+  "scoped_name": "Types::Role",
+  "scoped_short_name": "Role",
+  "scoped_prefix": [
+    "Types"
+  ],
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "Types",
+    "Role"
+  ],
+  "scoped_full_name": "Foobara::Auth::Types::Role",
+  "scoped_category": "type",
+  "reference": "Foobara::Auth::Types::Role",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "declaration_data": {
+    "type": "entity",
+    "name": "Types::Role",
+    "model_module": "Foobara::Auth",
+    "model_class": "Foobara::Auth::Types::Role",
+    "model_base_class": "Foobara::Entity",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "id": "integer",
+        "symbol": "symbol"
+      },
+      "required": [
+        "symbol"
+      ]
+    },
+    "primary_key": "id"
+  },
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "Types::Role",
+  "target_classes": [
+    "Foobara::Auth::Types::Role"
+  ],
+  "types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "entity",
+    "integer",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "entity",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "id": "integer",
+      "symbol": "symbol"
+    },
+    "required": [
+      "symbol"
+    ]
+  },
+  "organization_name": "Foobara",
+  "domain_name": "Auth",
+  "model_name": "Types::Role",
+  "model_base_class": "Foobara::Entity",
+  "model_class": "Foobara::Auth::Types::Role",
+  "entity_name": "Types::Role",
+  "primary_key_attribute": "id",
+  "primary_key_type": "integer"
+}

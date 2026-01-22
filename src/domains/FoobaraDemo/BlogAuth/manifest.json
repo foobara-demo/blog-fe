@@ -1,0 +1,32 @@
+{
+  "scoped_path": [
+    "BlogAuth"
+  ],
+  "scoped_name": "BlogAuth",
+  "scoped_short_name": "BlogAuth",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "BlogAuth"
+  ],
+  "scoped_full_name": "FoobaraDemo::BlogAuth",
+  "scoped_category": "domain",
+  "reference": "FoobaraDemo::BlogAuth",
+  "domain": "FoobaraDemo::BlogAuth",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "organization",
+    "FoobaraDemo"
+  ],
+  "types": [
+    "FoobaraDemo::BlogAuth::User"
+  ],
+  "depends_on": [
+    "Foobara::Auth",
+    "FoobaraDemo::Blog"
+  ],
+  "commands": [
+    "FoobaraDemo::BlogAuth::GetCurrentUser",
+    "FoobaraDemo::BlogAuth::Register"
+  ]
+}

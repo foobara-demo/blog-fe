@@ -1,0 +1,105 @@
+{
+  "scoped_path": [
+    "GetApiKeySummaries"
+  ],
+  "scoped_name": "GetApiKeySummaries",
+  "scoped_short_name": "GetApiKeySummaries",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "Foobara",
+    "Auth",
+    "GetApiKeySummaries"
+  ],
+  "scoped_full_name": "Foobara::Auth::GetApiKeySummaries",
+  "scoped_category": "command",
+  "reference": "Foobara::Auth::GetApiKeySummaries",
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "domain",
+    "Foobara::Auth"
+  ],
+  "types_depended_on": [
+    "Foobara::Auth::Types::ApiKeySummary",
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "inputs_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "result_types_depended_on": [
+    "Foobara::Auth::Types::ApiKeySummary",
+    "array",
+    "attributes",
+    "duck",
+    "symbol"
+  ],
+  "errors_types_depended_on": [
+    "array",
+    "attributes",
+    "duck",
+    "string",
+    "symbol"
+  ],
+  "possible_errors": {
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "data.user.not_found": {
+      "path": [
+        "user"
+      ],
+      "category": "data",
+      "symbol": "not_found",
+      "key": "data.user.not_found",
+      "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "manually_added": true
+    },
+    "runtime.unauthenticated": {
+      "category": "runtime",
+      "symbol": "unauthenticated",
+      "key": "runtime.unauthenticated",
+      "error": "Foobara::CommandConnector::UnauthenticatedError"
+    }
+  },
+  "inputs_type": {
+    "type": "attributes",
+    "element_type_declarations": {}
+  },
+  "description": null,
+  "result_type": {
+    "type": "array",
+    "element_type_declaration": "Foobara::Auth::Types::ApiKeySummary"
+  },
+  "errors_transformers": [
+    "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+  ],
+  "serializers": [
+    "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+  ],
+  "request_mutators": [
+    "Foobara::CommandConnectors::Http::SetInputToProcResult::Anon3"
+  ],
+  "requires_authentication": true,
+  "authenticator": {
+    "symbol": "bearer_or_api_key",
+    "explanation": "Expects an access token in authorization header in format of: Bearer <token>, or Expects an api key to be passed in the x-api-key header"
+  }
+}

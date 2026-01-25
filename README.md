@@ -44,3 +44,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## License
+
+This project is dual licensed under your choice of the Apache-2.0 license and the MIT license.
+Please see LICENSE.txt for more info.

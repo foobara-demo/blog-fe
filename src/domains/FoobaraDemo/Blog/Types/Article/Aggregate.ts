@@ -1,7 +1,8 @@
 import {
   type ArticleAttributesType
 } from './Ambiguous'
-import { LoadedArticle } from './Loaded'
+
+import { LoadedArticle } from '../../../../FoobaraDemo/Blog/Types/Article/Loaded'
 
 import { type LoadedArticleVersion } from '../../../../FoobaraDemo/Blog/Types/ArticleVersion/Loaded'
 

@@ -2,22 +2,7 @@
   "scoped_path": [
     "Auth"
   ],
-  "scoped_name": "Auth",
   "scoped_short_name": "Auth",
-  "scoped_prefix": null,
-  "scoped_full_path": [
-    "Foobara",
-    "Auth"
-  ],
-  "scoped_full_name": "Foobara::Auth",
-  "scoped_category": "domain",
-  "reference": "Foobara::Auth",
-  "domain": "Foobara::Auth",
-  "organization": "Foobara",
-  "parent": [
-    "organization",
-    "Foobara"
-  ],
   "types": [
     "Foobara::Auth::Types::ApiKeySummary",
     "Foobara::Auth::Types::Role",
@@ -32,5 +17,20 @@
     "Foobara::Auth::Login",
     "Foobara::Auth::Logout",
     "Foobara::Auth::RefreshLogin"
-  ]
+  ],
+  "domain": "Foobara::Auth",
+  "organization": "Foobara",
+  "parent": [
+    "organization",
+    "Foobara"
+  ],
+  "reference": "Foobara::Auth",
+  "scoped_category": "domain",
+  "scoped_full_name": "Foobara::Auth",
+  "scoped_full_path": [
+    "Foobara",
+    "Auth"
+  ],
+  "scoped_name": "Auth",
+  "scoped_prefix": null
 }

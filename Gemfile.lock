@@ -1,0 +1,104 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (4.0.1)
+    extract-repo (1.0.0)
+      foobara (< 2.0.0)
+      foobara-sh-cli-connector (< 2.0.0)
+    foob (0.1.2)
+      foobara (>= 0.3.0, < 2.0.0)
+      foobara-command-generator (< 2.0.0)
+      foobara-domain-generator (< 2.0.0)
+      foobara-domain-mapper-generator (< 2.0.0)
+      foobara-empty-ruby-project-generator (< 2.0.0)
+      foobara-empty-typescript-react-project-generator (< 2.0.0)
+      foobara-local-files-crud-driver-generator (< 2.0.0)
+      foobara-mcp-connector-generator (< 2.0.0)
+      foobara-organization-generator (< 2.0.0)
+      foobara-rack-connector-generator (< 2.0.0)
+      foobara-redis-crud-driver-generator (< 2.0.0)
+      foobara-remote-imports-generator (< 2.0.0)
+      foobara-resque-connector-generator (< 2.0.0)
+      foobara-resque-scheduler-connector-generator (< 2.0.0)
+      foobara-sh-cli-connector (< 2.0.0)
+      foobara-sh-cli-connector-generator (< 2.0.0)
+      foobara-type-generator (< 2.0.0)
+      foobara-typescript-react-command-form-generator (< 2.0.0)
+      foobara-typescript-remote-command-generator (< 2.0.0)
+      foobify-rails-app (< 2.0.0)
+    foobara (0.4.5)
+      bigdecimal
+      foobara-lru-cache (< 2.0.0)
+      foobara-util (< 2.0.0)
+      inheritable-thread-vars (< 2.0.0)
+    foobara-command-generator (0.1.0)
+      foobara (>= 0.1.7, < 2.0.0)
+      foobara-files-generator (< 2.0.0)
+    foobara-domain-generator (0.0.3)
+      foobara
+      foobara-files-generator
+    foobara-domain-mapper-generator (0.0.4)
+      foobara
+      foobara-files-generator
+    foobara-empty-ruby-project-generator (1.0.4)
+      extract-repo (< 2.0.0)
+      foobara (>= 0.1.1, < 2.0.0)
+      foobara-files-generator (< 2.0.0)
+    foobara-empty-typescript-react-project-generator (0.1.0)
+      foobara (>= 0.1.1, < 2.0.0)
+      foobara-files-generator (< 2.0.0)
+    foobara-files-generator (0.1.1)
+      foobara (>= 0.1.1, < 2.0.0)
+    foobara-local-files-crud-driver-generator (0.0.3)
+      foobara
+      foobara-files-generator
+    foobara-lru-cache (1.0.0)
+    foobara-mcp-connector-generator (0.1.0)
+      foobara (>= 0.1.1, < 2.0.0)
+      foobara-files-generator (>= 0.1.0, < 2.0.0)
+    foobara-organization-generator (0.0.2)
+      foobara
+      foobara-files-generator
+    foobara-rack-connector-generator (0.0.11)
+      foobara
+      foobara-files-generator
+    foobara-redis-crud-driver-generator (0.1.0)
+      foobara-files-generator (< 2.0.0)
+    foobara-remote-imports-generator (0.0.3)
+      foobara
+      foobara-files-generator
+    foobara-resque-connector-generator (0.0.2)
+      foobara
+      foobara-files-generator
+    foobara-resque-scheduler-connector-generator (0.0.2)
+      foobara
+      foobara-files-generator
+    foobara-sh-cli-connector (1.1.3)
+      foobara (>= 0.1.1, < 2.0.0)
+    foobara-sh-cli-connector-generator (0.1.0)
+      foobara (>= 0.1.1)
+      foobara-files-generator (< 2.0.0)
+    foobara-type-generator (0.0.4)
+      foobara
+      foobara-files-generator
+    foobara-typescript-react-command-form-generator (1.1.1)
+      foobara (>= 0.1.1, < 2.0.0)
+      foobara-typescript-remote-command-generator (< 2.0.0)
+    foobara-typescript-remote-command-generator (1.2.3)
+      foobara (>= 0.1.16, < 2.0.0)
+      foobara-files-generator (< 2.0.0)
+    foobara-util (1.0.8)
+    foobify-rails-app (0.0.10)
+      foobara (>= 0.3.0, < 2.0.0)
+    inheritable-thread-vars (0.0.3)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  foob
+  foobara
+
+BUNDLED WITH
+   2.7.2

@@ -2003,22 +2003,7 @@
       "scoped_path": [
         "Auth"
       ],
-      "scoped_name": "Auth",
       "scoped_short_name": "Auth",
-      "scoped_prefix": null,
-      "scoped_full_path": [
-        "Foobara",
-        "Auth"
-      ],
-      "scoped_full_name": "Foobara::Auth",
-      "scoped_category": "domain",
-      "reference": "Foobara::Auth",
-      "domain": "Foobara::Auth",
-      "organization": "Foobara",
-      "parent": [
-        "organization",
-        "Foobara"
-      ],
       "types": [
         "Foobara::Auth::Types::ApiKeySummary",
         "Foobara::Auth::Types::Role",
@@ -2033,28 +2018,28 @@
         "Foobara::Auth::Login",
         "Foobara::Auth::Logout",
         "Foobara::Auth::RefreshLogin"
-      ]
+      ],
+      "domain": "Foobara::Auth",
+      "organization": "Foobara",
+      "parent": [
+        "organization",
+        "Foobara"
+      ],
+      "reference": "Foobara::Auth",
+      "scoped_category": "domain",
+      "scoped_full_name": "Foobara::Auth",
+      "scoped_full_path": [
+        "Foobara",
+        "Auth"
+      ],
+      "scoped_name": "Auth",
+      "scoped_prefix": null
     },
     "FoobaraDemo::Blog": {
       "scoped_path": [
         "Blog"
       ],
-      "scoped_name": "Blog",
       "scoped_short_name": "Blog",
-      "scoped_prefix": null,
-      "scoped_full_path": [
-        "FoobaraDemo",
-        "Blog"
-      ],
-      "scoped_full_name": "FoobaraDemo::Blog",
-      "scoped_category": "domain",
-      "reference": "FoobaraDemo::Blog",
-      "domain": "FoobaraDemo::Blog",
-      "organization": "FoobaraDemo",
-      "parent": [
-        "organization",
-        "FoobaraDemo"
-      ],
       "types": [
         "FoobaraDemo::Blog::Article",
         "FoobaraDemo::Blog::ArticleVersion",
@@ -2067,55 +2052,58 @@
         "FoobaraDemo::Blog::PublishArticleChanges",
         "FoobaraDemo::Blog::StartNewArticle",
         "FoobaraDemo::Blog::UnpublishArticle"
-      ]
+      ],
+      "domain": "FoobaraDemo::Blog",
+      "organization": "FoobaraDemo",
+      "parent": [
+        "organization",
+        "FoobaraDemo"
+      ],
+      "reference": "FoobaraDemo::Blog",
+      "scoped_category": "domain",
+      "scoped_full_name": "FoobaraDemo::Blog",
+      "scoped_full_path": [
+        "FoobaraDemo",
+        "Blog"
+      ],
+      "scoped_name": "Blog",
+      "scoped_prefix": null
     },
     "FoobaraDemo::BlogAuth": {
       "scoped_path": [
         "BlogAuth"
       ],
-      "scoped_name": "BlogAuth",
       "scoped_short_name": "BlogAuth",
-      "scoped_prefix": null,
-      "scoped_full_path": [
-        "FoobaraDemo",
-        "BlogAuth"
+      "types": [
+        "FoobaraDemo::BlogAuth::User"
       ],
-      "scoped_full_name": "FoobaraDemo::BlogAuth",
-      "scoped_category": "domain",
-      "reference": "FoobaraDemo::BlogAuth",
+      "commands": [
+        "FoobaraDemo::BlogAuth::GetCurrentUser",
+        "FoobaraDemo::BlogAuth::Register"
+      ],
+      "depends_on": [
+        "Foobara::Auth",
+        "FoobaraDemo::Blog"
+      ],
       "domain": "FoobaraDemo::BlogAuth",
       "organization": "FoobaraDemo",
       "parent": [
         "organization",
         "FoobaraDemo"
       ],
-      "types": [
-        "FoobaraDemo::BlogAuth::User"
+      "reference": "FoobaraDemo::BlogAuth",
+      "scoped_category": "domain",
+      "scoped_full_name": "FoobaraDemo::BlogAuth",
+      "scoped_full_path": [
+        "FoobaraDemo",
+        "BlogAuth"
       ],
-      "depends_on": [
-        "Foobara::Auth",
-        "FoobaraDemo::Blog"
-      ],
-      "commands": [
-        "FoobaraDemo::BlogAuth::GetCurrentUser",
-        "FoobaraDemo::BlogAuth::Register"
-      ]
+      "scoped_name": "BlogAuth",
+      "scoped_prefix": null
     },
     "global_organization::global_domain": {
       "scoped_path": [],
-      "scoped_name": null,
       "scoped_short_name": null,
-      "scoped_prefix": [],
-      "scoped_full_path": [],
-      "scoped_full_name": "",
-      "scoped_category": "domain",
-      "reference": "global_organization::global_domain",
-      "domain": "global_organization::global_domain",
-      "organization": "global_organization",
-      "parent": [
-        "organization",
-        "global_organization"
-      ],
       "types": [
         "array",
         "associative_array",
@@ -2134,7 +2122,19 @@
         "string",
         "symbol"
       ],
-      "commands": []
+      "commands": [],
+      "domain": "global_organization::global_domain",
+      "organization": "global_organization",
+      "parent": [
+        "organization",
+        "global_organization"
+      ],
+      "reference": "global_organization::global_domain",
+      "scoped_category": "domain",
+      "scoped_full_name": "",
+      "scoped_full_path": [],
+      "scoped_name": null,
+      "scoped_prefix": []
     }
   },
   "error": {
@@ -5153,8 +5153,8 @@
     }
   },
   "metadata": {
-    "when": "2026-01-22 12:16:05 -0800",
-    "foobara_version": "0.4.4",
+    "when": "2026-01-24 17:53:06 -0800",
+    "foobara_version": "0.4.5",
     "url": "http://localhost:9292/manifest"
   }
 }

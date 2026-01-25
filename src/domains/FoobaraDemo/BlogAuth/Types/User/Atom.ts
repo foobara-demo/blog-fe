@@ -3,14 +3,14 @@ import {
 } from './Ambiguous'
 import { LoadedUser } from './Loaded'
 
-import * as Auth from '../../../../Foobara/Auth'
+import type * as Auth from '../../../../Foobara/Auth'
 
 import type * as Blog from '../../../../FoobaraDemo/Blog'
 
 export interface UserAtomAttributesType extends UserAttributesType {
   id: number
   blog_user: Blog.UnloadedUser
-  auth_user: Types.UnloadedUser
+  auth_user: Auth.UnloadedUser
   username?: string
   email?: string | null
   full_name?: string

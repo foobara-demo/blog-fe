@@ -1,4 +1,4 @@
-import { Model } from '../../../../base/Model'
+import { Model as FoobaraModel } from '../../../../base/Model'
 
 import { type token_state } from '../../../../Foobara/Auth/Types/token_state'
 
@@ -11,7 +11,7 @@ export interface ApiKeySummaryAttributesType {
 
 export class ApiKeySummary<
   AttributesType extends ApiKeySummaryAttributesType = ApiKeySummaryAttributesType
-> extends Model<AttributesType> {
+> extends FoobaraModel<AttributesType> {
   static readonly modelName: string = 'ApiKeySummary'
 
   get token_id (): AttributesType['token_id'] {

@@ -2,22 +2,7 @@
   "scoped_path": [
     "Blog"
   ],
-  "scoped_name": "Blog",
   "scoped_short_name": "Blog",
-  "scoped_prefix": null,
-  "scoped_full_path": [
-    "FoobaraDemo",
-    "Blog"
-  ],
-  "scoped_full_name": "FoobaraDemo::Blog",
-  "scoped_category": "domain",
-  "reference": "FoobaraDemo::Blog",
-  "domain": "FoobaraDemo::Blog",
-  "organization": "FoobaraDemo",
-  "parent": [
-    "organization",
-    "FoobaraDemo"
-  ],
   "types": [
     "FoobaraDemo::Blog::Article",
     "FoobaraDemo::Blog::ArticleVersion",
@@ -30,5 +15,20 @@
     "FoobaraDemo::Blog::PublishArticleChanges",
     "FoobaraDemo::Blog::StartNewArticle",
     "FoobaraDemo::Blog::UnpublishArticle"
-  ]
+  ],
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "organization",
+    "FoobaraDemo"
+  ],
+  "reference": "FoobaraDemo::Blog",
+  "scoped_category": "domain",
+  "scoped_full_name": "FoobaraDemo::Blog",
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog"
+  ],
+  "scoped_name": "Blog",
+  "scoped_prefix": null
 }

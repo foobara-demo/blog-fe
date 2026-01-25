@@ -1,6 +1,6 @@
 import { Entity } from '../../../../base/Entity'
 
-import * as Auth from '../../../../Foobara/Auth'
+import type * as Auth from '../../../../Foobara/Auth'
 
 import type * as Blog from '../../../../FoobaraDemo/Blog'
 
@@ -9,7 +9,7 @@ export const userPrimaryKeyAttributeName: 'id' = 'id'
 export interface UserAttributesType {
   id: number
   blog_user: Blog.User
-  auth_user: Types.User
+  auth_user: Auth.User
   username?: string
   email?: string | null
   full_name?: string

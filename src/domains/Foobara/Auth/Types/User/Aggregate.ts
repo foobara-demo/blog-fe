@@ -1,9 +1,10 @@
 import {
   type UserAttributesType
 } from './Ambiguous'
-import { LoadedUser } from './Loaded'
 
 import { type LoadedRole } from '../../../../Foobara/Auth/Types/Role/Loaded'
+
+import { LoadedUser } from '../../../../Foobara/Auth/Types/User/Loaded'
 
 export interface UserAggregateAttributesType extends UserAttributesType {
   id: number

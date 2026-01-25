@@ -13,7 +13,7 @@ export default function castJsonResult (json: any): Result {
   json.auth_user.roles?.forEach((element: any, index: number, array: any[]) => {
     array[index] = new LoadedRole(element)
   })
-  json.auth_user = new Types.UserAggregate(json.auth_user)
+  json.auth_user = new Auth.UserAggregate(json.auth_user)
   json = new BlogAuth.UserAggregate(json)
   return json
 }

@@ -1,16 +1,17 @@
 import {
   type UserAttributesType
 } from './Ambiguous'
-import { LoadedUser } from './Loaded'
 
-import { type UserAggregate } from '../../../../Foobara/Auth/Types/User/Aggregate'
+import type * as Auth from '../../../../Foobara/Auth'
 
-import { LoadedUser } from '../../../../FoobaraDemo/Blog/Types/User/Loaded'
+import type * as Blog from '../../../../FoobaraDemo/Blog'
+
+import { LoadedUser } from '../../../../FoobaraDemo/BlogAuth/Types/User/Loaded'
 
 export interface UserAggregateAttributesType extends UserAttributesType {
   id: number
-  blog_user: LoadedUser
-  auth_user: UserAggregate
+  blog_user: Blog.LoadedUser
+  auth_user: Auth.UserAggregate
   username?: string
   email?: string | null
   full_name?: string

@@ -1,0 +1,36 @@
+.Articles {
+  padding: 40px 20px;
+  min-height: calc(100vh - 60px);
+  background-color: #f7fafc;
+}
+
+.Articles .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Articles h1 {
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.placeholder {
+  background: white;
+  padding: 60px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.placeholder p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.placeholder-note {
+  font-size: 1rem;
+  color: #718096;
+  font-style: italic;
+}

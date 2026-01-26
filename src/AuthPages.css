@@ -1,0 +1,77 @@
+.AuthPage {
+  padding: 40px 20px;
+  min-height: calc(100vh - 60px);
+  background-color: #f7fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.auth-container h1 {
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.AuthPage .form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AuthPage .CommandForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.AuthPage .CommandForm input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.AuthPage .CommandForm button {
+  background-color: #667eea;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.AuthPage .CommandForm button:hover {
+  background-color: #5a67d8;
+}
+
+.AuthPage .CommandForm .error-message {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid #e53e3e;
+  margin: 0;
+}
+
+.AuthPage .CommandForm p:not(.error-message) {
+  color: #2d3748;
+  background-color: #f0fff4;
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid #48bb78;
+  margin: 0;
+}

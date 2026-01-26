@@ -1,0 +1,77 @@
+.CreateArticle {
+  padding: 40px 20px;
+  min-height: calc(100vh - 60px);
+  background-color: #f7fafc;
+}
+
+.CreateArticle .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.CreateArticle h1 {
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CommandForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.CommandForm input,
+.CommandForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.CommandForm textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.CommandForm button {
+  background-color: #667eea;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.CommandForm button:hover {
+  background-color: #5a67d8;
+}
+
+.CommandForm .error-message {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid #e53e3e;
+}
+
+.CommandForm p:not(.error-message) {
+  color: #2d3748;
+  background-color: #f0fff4;
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid #48bb78;
+}

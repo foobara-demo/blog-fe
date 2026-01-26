@@ -22,4 +22,12 @@ export { UnpublishArticle } from '../../FoobaraDemo/Blog/UnpublishArticle'
 
 export { ArticleVersion } from '../../FoobaraDemo/Blog/Types/ArticleVersion/Ambiguous'
 
+export { UnloadedArticleVersion } from '../../FoobaraDemo/Blog/Types/ArticleVersion/Unloaded'
+
+export { LoadedArticleVersion } from '../../FoobaraDemo/Blog/Types/ArticleVersion/Loaded'
+
 export { User } from '../../FoobaraDemo/Blog/Types/User/Ambiguous'
+
+export { UnloadedUser } from '../../FoobaraDemo/Blog/Types/User/Unloaded'
+
+export { LoadedUser } from '../../FoobaraDemo/Blog/Types/User/Loaded'

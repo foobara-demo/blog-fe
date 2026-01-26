@@ -25,3 +25,13 @@ export * as RefreshLoginErrors from '../../Foobara/Auth/RefreshLogin/errors'
 export { ApiKeySummary } from '../../Foobara/Auth/Types/ApiKeySummary/ApiKeySummary'
 
 export type { token_state } from '../../Foobara/Auth/Types/token_state'
+
+export { User } from '../../Foobara/Auth/Types/User/Ambiguous'
+
+export { UnloadedUser } from '../../Foobara/Auth/Types/User/Unloaded'
+
+export { LoadedUser } from '../../Foobara/Auth/Types/User/Loaded'
+
+export { UserAtom } from '../../Foobara/Auth/Types/User/Atom'
+
+export { UserAggregate } from '../../Foobara/Auth/Types/User/Aggregate'

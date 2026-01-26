@@ -22,4 +22,6 @@ export * as RefreshLoginErrors from '../../Foobara/Auth/RefreshLogin/errors'
 
 // TODO: put these on an entities module so that commands can be the only top-level interface.
 
-export { Role } from '../../Foobara/Auth/Types/Role/Ambiguous'
+export { ApiKeySummary } from '../../Foobara/Auth/Types/ApiKeySummary/ApiKeySummary'
+
+export type { token_state } from '../../Foobara/Auth/Types/token_state'

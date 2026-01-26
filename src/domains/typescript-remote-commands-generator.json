@@ -1,4 +1,5 @@
 [
+  ".env",
   "Foobara/Auth/CreateApiKey/Errors.ts",
   "Foobara/Auth/CreateApiKey/Inputs.ts",
   "Foobara/Auth/CreateApiKey/Result.ts",

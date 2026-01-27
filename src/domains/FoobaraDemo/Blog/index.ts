@@ -20,6 +20,16 @@ export { UnpublishArticle } from '../../FoobaraDemo/Blog/UnpublishArticle'
 
 // TODO: put these on an entities module so that commands can be the only top-level interface.
 
+export { Article } from '../../FoobaraDemo/Blog/Types/Article/Ambiguous'
+
+export { UnloadedArticle } from '../../FoobaraDemo/Blog/Types/Article/Unloaded'
+
+export { LoadedArticle } from '../../FoobaraDemo/Blog/Types/Article/Loaded'
+
+export { ArticleAtom } from '../../FoobaraDemo/Blog/Types/Article/Atom'
+
+export { ArticleAggregate } from '../../FoobaraDemo/Blog/Types/Article/Aggregate'
+
 export { ArticleVersion } from '../../FoobaraDemo/Blog/Types/ArticleVersion/Ambiguous'
 
 export { UnloadedArticleVersion } from '../../FoobaraDemo/Blog/Types/ArticleVersion/Unloaded'

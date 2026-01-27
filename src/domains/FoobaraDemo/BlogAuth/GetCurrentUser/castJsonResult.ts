@@ -6,7 +6,7 @@ import { LoadedRole } from '../../../Foobara/Auth/Types/Role/Loaded'
 
 import { LoadedUser } from '../../../FoobaraDemo/Blog/Types/User/Loaded'
 
-import * as BlogAuth from '../../../FoobaraDemo/BlogAuth'
+import { UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Aggregate'
 
 export default function castJsonResult (json: any): Result {
   json.blog_user = new LoadedUser(json.blog_user)
@@ -14,6 +14,6 @@ export default function castJsonResult (json: any): Result {
     array[index] = new LoadedRole(element)
   })
   json.auth_user = new Auth.UserAggregate(json.auth_user)
-  json = new BlogAuth.UserAggregate(json)
+  json = new UserAggregate(json)
   return json
 }

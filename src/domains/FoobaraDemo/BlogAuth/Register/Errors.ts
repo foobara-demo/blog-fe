@@ -46,6 +46,10 @@ export interface PossibleErrors {
 
   'data.email.second_part_has_bad_characters': SecondPartHasBadCharactersError
 
+  'data.full_name.cannot_cast': CannotCastError
+
+  'data.full_name.missing_required_attribute': MissingRequiredAttributeError
+
   'data.missing_required_attribute': MissingRequiredAttributeError
 
   'data.plaintext_password.cannot_cast': CannotCastError

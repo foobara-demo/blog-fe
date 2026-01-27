@@ -1918,6 +1918,24 @@
           "key": "data.email.second_part_has_bad_characters",
           "error": "email::Validators::SecondPartHasBadCharacters::SecondPartHasBadCharactersError"
         },
+        "data.full_name.cannot_cast": {
+          "path": [
+            "full_name"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.full_name.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError"
+        },
+        "data.full_name.missing_required_attribute": {
+          "path": [
+            "full_name"
+          ],
+          "category": "data",
+          "symbol": "missing_required_attribute",
+          "key": "data.full_name.missing_required_attribute",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+        },
         "data.missing_required_attribute": {
           "category": "data",
           "symbol": "missing_required_attribute",
@@ -1974,17 +1992,16 @@
             "allow_nil": true,
             "sensitive_exposed": true,
             "type": "string"
-          }
+          },
+          "full_name": "string"
         },
         "required": [
+          "full_name",
           "username"
         ]
       },
       "description": null,
       "result_type": "FoobaraDemo::BlogAuth::User",
-      "inputs_transformers": [
-        "email__plaintext_password__username"
-      ],
       "result_transformers": [
         "SensitiveValueRemover::FoobaraDemo::BlogAuth::User"
       ],
@@ -5153,8 +5170,8 @@
     }
   },
   "metadata": {
-    "when": "2026-01-26 19:06:16 -0800",
-    "foobara_version": "0.4.5",
+    "when": "2026-01-27 12:43:44 -0800",
+    "foobara_version": "0.4.6",
     "url": "http://localhost:9292/manifest"
   }
 }

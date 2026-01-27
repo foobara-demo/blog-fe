@@ -16,6 +16,8 @@ export default function RegisterForm (): JSX.Element {
 
   const [plaintextPassword, setPlaintextPassword] = useState<string | null | undefined>(undefined)
 
+  const [fullName, setFullName] = useState<string | undefined>(undefined)
+
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -41,10 +43,16 @@ export default function RegisterForm (): JSX.Element {
       return
     }
 
+    if (fullName == null) {
+      // TODO: perform some kind of validation error
+      return
+    }
+
     const inputs: RegisterInputs = {
       username,
       email,
-      plaintext_password: plaintextPassword
+      plaintext_password: plaintextPassword,
+      full_name: fullName
     }
 
     const command = new Register(inputs)
@@ -90,6 +98,13 @@ export default function RegisterForm (): JSX.Element {
           value={plaintextPassword ?? ''}
           onChange={(e) => { setPlaintextPassword(e.target.value as string | null) }}
           placeholder="plaintext password"
+                  />
+
+        <input
+
+          value={fullName ?? ''}
+          onChange={(e) => { setFullName(e.target.value) }}
+          placeholder="full name"
                   />
 
         <button onClick={run}>Register</button>

@@ -29,7 +29,7 @@ GEM
       foobara-typescript-react-command-form-generator (< 2.0.0)
       foobara-typescript-remote-command-generator (< 2.0.0)
       foobify-rails-app (< 2.0.0)
-    foobara (0.4.5)
+    foobara (0.4.6)
       bigdecimal
       foobara-lru-cache (< 2.0.0)
       foobara-util (< 2.0.0)
@@ -87,7 +87,7 @@ GEM
     foobara-typescript-react-command-form-generator (1.1.1)
       foobara (>= 0.1.1, < 2.0.0)
       foobara-typescript-remote-command-generator (< 2.0.0)
-    foobara-typescript-remote-command-generator (1.2.4)
+    foobara-typescript-remote-command-generator (1.2.5)
       foobara (>= 0.1.16, < 2.0.0)
       foobara-files-generator (< 2.0.0)
     foobara-util (1.0.8)

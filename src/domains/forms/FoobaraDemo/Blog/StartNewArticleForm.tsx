@@ -10,7 +10,7 @@ import type StartNewArticleResult from '../../../FoobaraDemo/Blog/StartNewArticl
 import { type Error as StartNewArticleError } from '../../../FoobaraDemo/Blog/StartNewArticle/Errors'
 
 export default function StartNewArticleForm (): JSX.Element {
-  const [author, setAuthor] = useState<number | undefined>(undefined)
+  const [title, setTitle] = useState<string | undefined>(undefined)
 
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -22,14 +22,12 @@ export default function StartNewArticleForm (): JSX.Element {
   }
 
   const run = toVoid(async (): Promise<void> => {
-    if (author == null) {
+    if (title == null) {
       // TODO: perform some kind of validation error
       return
     }
 
-    const inputs: StartNewArticleInputs = {
-      author
-    }
+    const inputs: StartNewArticleInputs = { title }
 
     const command = new StartNewArticle(inputs)
 
@@ -54,12 +52,11 @@ export default function StartNewArticleForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <input
 
-          value={author ?? ''}
-          onChange={(e) => { setAuthor(parseInt(e.target.value)) }}
-          placeholder="author"
+          value={title ?? ''}
+          onChange={(e) => { setTitle(e.target.value) }}
+          placeholder="title"
                   />
 
         <button onClick={run}>Start new article</button>

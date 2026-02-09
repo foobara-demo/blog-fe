@@ -8,8 +8,6 @@ import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value
 
 import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
-import { type MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
-
 export interface PossibleErrors {
 
   'data.author.cannot_cast': CannotCastError
@@ -17,12 +15,6 @@ export interface PossibleErrors {
   'data.author.not_found': NotFoundError
 
   'data.cannot_cast': CannotCastError
-
-  'data.missing_required_attribute': MissingRequiredAttributeError
-
-  'data.title.cannot_cast': CannotCastError
-
-  'data.title.missing_required_attribute': MissingRequiredAttributeError
 
   'data.unexpected_attributes': UnexpectedAttributesError
 
@@ -36,5 +28,4 @@ export type Error = NotAllowedError |
 UnauthenticatedError |
 NotFoundError |
 CannotCastError |
-MissingRequiredAttributeError |
 UnexpectedAttributesError

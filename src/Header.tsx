@@ -8,7 +8,7 @@ import { Logout } from './domains/Foobara/Auth/Logout'
 const activeClassName = ({ isActive }: { isActive: boolean }) => (isActive ? 'active' : '')
 
 const Header: React.FC = () => {
-  const { result, isLoading, isSuccess: isLoggedIn } = useQuery<GetCurrentUser>(GetCurrentUser, undefined)
+  const { result, isLoading, isSuccess: isLoggedIn } = useQuery(GetCurrentUser)
   const navigate = useNavigate()
 
   const handleLogout = (): void => {

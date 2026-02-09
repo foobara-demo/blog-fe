@@ -1054,6 +1054,133 @@
         "explanation": "Expects an access token in authorization header in format of: Bearer <token>, or Expects an api key to be passed in the x-api-key header"
       }
     },
+    "FoobaraDemo::Blog::FindArticles": {
+      "scoped_path": [
+        "FindArticles"
+      ],
+      "scoped_name": "FindArticles",
+      "scoped_short_name": "FindArticles",
+      "scoped_prefix": null,
+      "scoped_full_path": [
+        "FoobaraDemo",
+        "Blog",
+        "FindArticles"
+      ],
+      "scoped_full_name": "FoobaraDemo::Blog::FindArticles",
+      "scoped_category": "command",
+      "reference": "FoobaraDemo::Blog::FindArticles",
+      "domain": "FoobaraDemo::Blog",
+      "organization": "FoobaraDemo",
+      "parent": [
+        "domain",
+        "FoobaraDemo::Blog"
+      ],
+      "types_depended_on": [
+        "FoobaraDemo::Blog::Article",
+        "FoobaraDemo::Blog::User",
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "inputs_types_depended_on": [
+        "FoobaraDemo::Blog::User",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "result_types_depended_on": [
+        "FoobaraDemo::Blog::Article",
+        "array",
+        "attributes",
+        "duck",
+        "symbol"
+      ],
+      "errors_types_depended_on": [
+        "array",
+        "attributes",
+        "duck",
+        "string",
+        "symbol"
+      ],
+      "possible_errors": {
+        "data.author.cannot_cast": {
+          "path": [
+            "author"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.author.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError"
+        },
+        "data.author.not_found": {
+          "path": [
+            "author"
+          ],
+          "category": "data",
+          "symbol": "not_found",
+          "key": "data.author.not_found",
+          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "manually_added": true
+        },
+        "data.cannot_cast": {
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError"
+        },
+        "data.unexpected_attributes": {
+          "category": "data",
+          "symbol": "unexpected_attributes",
+          "key": "data.unexpected_attributes",
+          "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+        },
+        "runtime.not_allowed": {
+          "category": "runtime",
+          "symbol": "not_allowed",
+          "key": "runtime.not_allowed",
+          "error": "Foobara::CommandConnector::NotAllowedError"
+        },
+        "runtime.unauthenticated": {
+          "category": "runtime",
+          "symbol": "unauthenticated",
+          "key": "runtime.unauthenticated",
+          "error": "Foobara::CommandConnector::UnauthenticatedError"
+        }
+      },
+      "inputs_type": {
+        "type": "attributes",
+        "element_type_declarations": {
+          "author": "FoobaraDemo::Blog::User"
+        },
+        "defaults": {
+          "author": "#<Proc:0x00007f35cb10bed8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:28 (lambda)>"
+        }
+      },
+      "description": null,
+      "result_type": {
+        "type": "array",
+        "element_type_declaration": "FoobaraDemo::Blog::Article"
+      },
+      "errors_transformers": [
+        "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+      ],
+      "serializers": [
+        "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
+        "Foobara::CommandConnectors::Serializers::AtomicSerializer",
+        "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "request_mutators": [
+        "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon2"
+      ],
+      "requires_authentication": true,
+      "authenticator": {
+        "symbol": "bearer_or_api_key",
+        "explanation": "Expects an access token in authorization header in format of: Bearer <token>, or Expects an api key to be passed in the x-api-key header"
+      }
+    },
     "FoobaraDemo::Blog::PublishArticle": {
       "scoped_path": [
         "PublishArticle"
@@ -1388,6 +1515,7 @@
         "array",
         "attributes",
         "duck",
+        "string",
         "symbol"
       ],
       "result_types_depended_on": [
@@ -1420,15 +1548,6 @@
           "key": "data.author.cannot_cast",
           "error": "Foobara::Value::Processor::Casting::CannotCastError"
         },
-        "data.author.missing_required_attribute": {
-          "path": [
-            "author"
-          ],
-          "category": "data",
-          "symbol": "missing_required_attribute",
-          "key": "data.author.missing_required_attribute",
-          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
-        },
         "data.author.not_found": {
           "path": [
             "author"
@@ -1449,6 +1568,24 @@
           "category": "data",
           "symbol": "missing_required_attribute",
           "key": "data.missing_required_attribute",
+          "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+        },
+        "data.title.cannot_cast": {
+          "path": [
+            "title"
+          ],
+          "category": "data",
+          "symbol": "cannot_cast",
+          "key": "data.title.cannot_cast",
+          "error": "Foobara::Value::Processor::Casting::CannotCastError"
+        },
+        "data.title.missing_required_attribute": {
+          "path": [
+            "title"
+          ],
+          "category": "data",
+          "symbol": "missing_required_attribute",
+          "key": "data.title.missing_required_attribute",
           "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
         },
         "data.unexpected_attributes": {
@@ -1473,11 +1610,15 @@
       "inputs_type": {
         "type": "attributes",
         "element_type_declarations": {
-          "author": "FoobaraDemo::Blog::User"
+          "author": "FoobaraDemo::Blog::User",
+          "title": "string"
         },
         "required": [
-          "author"
-        ]
+          "title"
+        ],
+        "defaults": {
+          "author": "#<Proc:0x00007f35cb082688 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:22 (lambda)>"
+        }
       },
       "description": null,
       "result_type": "FoobaraDemo::Blog::Article",
@@ -1488,6 +1629,9 @@
         "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
         "Foobara::CommandConnectors::Serializers::AtomicSerializer",
         "Foobara::CommandConnectors::Serializers::JsonSerializer"
+      ],
+      "request_mutators": [
+        "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon1"
       ],
       "requires_authentication": true,
       "authenticator": {
@@ -2065,6 +2209,7 @@
       "commands": [
         "FoobaraDemo::Blog::DeleteArticle",
         "FoobaraDemo::Blog::EditArticle",
+        "FoobaraDemo::Blog::FindArticles",
         "FoobaraDemo::Blog::PublishArticle",
         "FoobaraDemo::Blog::PublishArticleChanges",
         "FoobaraDemo::Blog::StartNewArticle",
@@ -5170,8 +5315,8 @@
     }
   },
   "metadata": {
-    "when": "2026-01-27 12:43:44 -0800",
-    "foobara_version": "0.4.6",
+    "when": "2026-02-06 19:43:27 -0800",
+    "foobara_version": "0.5.1",
     "url": "http://localhost:9292/manifest"
   }
 }

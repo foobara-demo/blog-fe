@@ -1,18 +1,18 @@
 {
   "scoped_path": [
-    "StartNewArticle"
+    "FindArticles"
   ],
-  "scoped_name": "StartNewArticle",
-  "scoped_short_name": "StartNewArticle",
+  "scoped_name": "FindArticles",
+  "scoped_short_name": "FindArticles",
   "scoped_prefix": null,
   "scoped_full_path": [
     "FoobaraDemo",
     "Blog",
-    "StartNewArticle"
+    "FindArticles"
   ],
-  "scoped_full_name": "FoobaraDemo::Blog::StartNewArticle",
+  "scoped_full_name": "FoobaraDemo::Blog::FindArticles",
   "scoped_category": "command",
-  "reference": "FoobaraDemo::Blog::StartNewArticle",
+  "reference": "FoobaraDemo::Blog::FindArticles",
   "domain": "FoobaraDemo::Blog",
   "organization": "FoobaraDemo",
   "parent": [
@@ -21,15 +21,10 @@
   ],
   "types_depended_on": [
     "FoobaraDemo::Blog::Article",
-    "FoobaraDemo::Blog::ArticleVersion",
     "FoobaraDemo::Blog::User",
     "array",
     "attributes",
-    "boolean",
-    "datetime",
     "duck",
-    "entity",
-    "integer",
     "string",
     "symbol"
   ],
@@ -38,20 +33,13 @@
     "array",
     "attributes",
     "duck",
-    "string",
     "symbol"
   ],
   "result_types_depended_on": [
-    "FoobaraDemo::Blog::ArticleVersion",
-    "FoobaraDemo::Blog::User",
+    "FoobaraDemo::Blog::Article",
     "array",
     "attributes",
-    "boolean",
-    "datetime",
     "duck",
-    "entity",
-    "integer",
-    "string",
     "symbol"
   ],
   "errors_types_depended_on": [
@@ -87,30 +75,6 @@
       "key": "data.cannot_cast",
       "error": "Foobara::Value::Processor::Casting::CannotCastError"
     },
-    "data.missing_required_attribute": {
-      "category": "data",
-      "symbol": "missing_required_attribute",
-      "key": "data.missing_required_attribute",
-      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
-    },
-    "data.title.cannot_cast": {
-      "path": [
-        "title"
-      ],
-      "category": "data",
-      "symbol": "cannot_cast",
-      "key": "data.title.cannot_cast",
-      "error": "Foobara::Value::Processor::Casting::CannotCastError"
-    },
-    "data.title.missing_required_attribute": {
-      "path": [
-        "title"
-      ],
-      "category": "data",
-      "symbol": "missing_required_attribute",
-      "key": "data.title.missing_required_attribute",
-      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
-    },
     "data.unexpected_attributes": {
       "category": "data",
       "symbol": "unexpected_attributes",
@@ -133,18 +97,17 @@
   "inputs_type": {
     "type": "attributes",
     "element_type_declarations": {
-      "author": "FoobaraDemo::Blog::User",
-      "title": "string"
+      "author": "FoobaraDemo::Blog::User"
     },
-    "required": [
-      "title"
-    ],
     "defaults": {
-      "author": "#<Proc:0x00007f35cb082688 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:22 (lambda)>"
+      "author": "#<Proc:0x00007f35cb10bed8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:28 (lambda)>"
     }
   },
   "description": null,
-  "result_type": "FoobaraDemo::Blog::Article",
+  "result_type": {
+    "type": "array",
+    "element_type_declaration": "FoobaraDemo::Blog::Article"
+  },
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
   ],
@@ -154,7 +117,7 @@
     "Foobara::CommandConnectors::Serializers::JsonSerializer"
   ],
   "request_mutators": [
-    "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon1"
+    "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon2"
   ],
   "requires_authentication": true,
   "authenticator": {

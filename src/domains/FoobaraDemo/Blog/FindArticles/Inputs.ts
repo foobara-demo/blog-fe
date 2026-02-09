@@ -1,6 +1,5 @@
 interface Inputs {
   author?: number
-  title: string
 }
 
 export default Inputs

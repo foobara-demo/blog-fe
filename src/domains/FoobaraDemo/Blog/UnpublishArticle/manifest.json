@@ -134,6 +134,9 @@
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
   ],
+  "pre_commit_transformers": [
+    "Foobara::CommandConnectors::Transformers::LoadDelegatedAttributesEntitiesPreCommitTransformer"
+  ],
   "serializers": [
     "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
     "Foobara::CommandConnectors::Serializers::AtomicSerializer",

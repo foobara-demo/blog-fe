@@ -9,11 +9,19 @@ import { LoadedUser } from '../../../FoobaraDemo/Blog/Types/User/Loaded'
 import { UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Aggregate'
 
 export default function castJsonResult (json: any): Result {
-  json.blog_user = new LoadedUser(json.blog_user)
-  json.auth_user.roles?.forEach((element: any, index: number, array: any[]) => {
-    array[index] = new LoadedRole(element)
+  if (json?.blog_user !== undefined) {
+    json.blog_user = new LoadedUser(json.blog_user)
+  }
+  json?.auth_user?.roles?.forEach((element: any, index: number, array: any[]) => {
+    if (element !== undefined) {
+      array[index] = new LoadedRole(element)
+    }
   })
-  json.auth_user = new Auth.UserAggregate(json.auth_user)
-  json = new UserAggregate(json)
+  if (json?.auth_user !== undefined) {
+    json.auth_user = new Auth.UserAggregate(json.auth_user)
+  }
+  if (json !== undefined) {
+    json = new UserAggregate(json)
+  }
   return json
 }

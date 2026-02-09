@@ -140,13 +140,16 @@
       "title"
     ],
     "defaults": {
-      "author": "#<Proc:0x00007f35cb082688 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:22 (lambda)>"
+      "author": "#<Proc:0x00007f1b4dac42b0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:18 (lambda)>"
     }
   },
   "description": null,
   "result_type": "FoobaraDemo::Blog::Article",
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+  ],
+  "pre_commit_transformers": [
+    "Foobara::CommandConnectors::Transformers::LoadDelegatedAttributesEntitiesPreCommitTransformer"
   ],
   "serializers": [
     "Foobara::CommandConnectors::Serializers::ErrorsSerializer",

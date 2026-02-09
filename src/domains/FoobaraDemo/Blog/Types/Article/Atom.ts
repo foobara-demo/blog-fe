@@ -11,6 +11,7 @@ export interface ArticleAtomAttributesType extends ArticleAttributesType {
   id: number
   author: UnloadedUser
   is_published: boolean
+  current_version: UnloadedArticleVersion
   current_published_version?: UnloadedArticleVersion | null
   current_draft?: UnloadedArticleVersion | null
   past_published_versions: UnloadedArticleVersion[]
@@ -18,6 +19,8 @@ export interface ArticleAtomAttributesType extends ArticleAttributesType {
   unpublished_at?: Date | null
   originally_published_at?: Date | null
   last_edited_at?: Date
+  title: string
+  body: string
 }
 
 export class ArticleAtom extends LoadedArticle<ArticleAtomAttributesType> {

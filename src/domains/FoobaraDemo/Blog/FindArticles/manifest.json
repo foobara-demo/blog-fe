@@ -100,7 +100,7 @@
       "author": "FoobaraDemo::Blog::User"
     },
     "defaults": {
-      "author": "#<Proc:0x00007f35cb10bed8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:28 (lambda)>"
+      "author": "#<Proc:0x00007f1b4deaffc8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:26 (lambda)>"
     }
   },
   "description": null,
@@ -111,10 +111,13 @@
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
   ],
+  "pre_commit_transformers": [
+    "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer"
+  ],
   "serializers": [
     "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
-    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+    "Foobara::CommandConnectors::Serializers::JsonSerializer",
+    "Foobara::CommandConnectors::Serializers::AggregateSerializer"
   ],
   "request_mutators": [
     "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon2"

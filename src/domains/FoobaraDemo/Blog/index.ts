@@ -10,6 +10,8 @@ export { EditArticle } from '../../FoobaraDemo/Blog/EditArticle'
 
 export * as EditArticleErrors from '../../FoobaraDemo/Blog/EditArticle/errors'
 
+export { FindArticleSummaries } from '../../FoobaraDemo/Blog/FindArticleSummaries'
+
 export { FindArticles } from '../../FoobaraDemo/Blog/FindArticles'
 
 export { PublishArticle } from '../../FoobaraDemo/Blog/PublishArticle'
@@ -43,3 +45,9 @@ export { User } from '../../FoobaraDemo/Blog/Types/User/Ambiguous'
 export { UnloadedUser } from '../../FoobaraDemo/Blog/Types/User/Unloaded'
 
 export { LoadedUser } from '../../FoobaraDemo/Blog/Types/User/Loaded'
+
+export { ArticleSummary } from '../../FoobaraDemo/Blog/Types/ArticleSummary/ArticleSummary'
+
+export { ArticleSummaryAtom } from '../../FoobaraDemo/Blog/Types/ArticleSummary/Atom'
+
+export { ArticleSummaryAggregate } from '../../FoobaraDemo/Blog/Types/ArticleSummary/Aggregate'

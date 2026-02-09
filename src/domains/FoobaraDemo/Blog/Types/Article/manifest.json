@@ -20,17 +20,21 @@
     "FoobaraDemo::Blog"
   ],
   "declaration_data": {
-    "type": "entity",
+    "type": "detached_entity",
     "name": "Article",
     "model_module": "FoobaraDemo::Blog",
     "model_class": "FoobaraDemo::Blog::Article",
-    "model_base_class": "Foobara::Entity",
+    "model_base_class": "Foobara::DetachedEntity",
     "attributes_declaration": {
       "type": "attributes",
       "element_type_declarations": {
         "id": "integer",
         "author": "FoobaraDemo::Blog::User",
         "is_published": "boolean",
+        "current_version": {
+          "description": "If published, will be the published version. Otherwise, the latest draft.",
+          "type": "FoobaraDemo::Blog::ArticleVersion"
+        },
         "current_published_version": {
           "allow_nil": true,
           "type": "FoobaraDemo::Blog::ArticleVersion"
@@ -55,10 +59,16 @@
           "allow_nil": true,
           "type": "datetime"
         },
-        "last_edited_at": "datetime"
+        "last_edited_at": "datetime",
+        "title": "string",
+        "body": {
+          "description": "The body of the article in Markdown",
+          "type": "string"
+        }
       },
       "required": [
-        "author"
+        "author",
+        "current_version"
       ],
       "defaults": {
         "is_published": false,
@@ -100,6 +110,10 @@
       "id": "integer",
       "author": "FoobaraDemo::Blog::User",
       "is_published": "boolean",
+      "current_version": {
+        "description": "If published, will be the published version. Otherwise, the latest draft.",
+        "type": "FoobaraDemo::Blog::ArticleVersion"
+      },
       "current_published_version": {
         "allow_nil": true,
         "type": "FoobaraDemo::Blog::ArticleVersion"
@@ -124,10 +138,16 @@
         "allow_nil": true,
         "type": "datetime"
       },
-      "last_edited_at": "datetime"
+      "last_edited_at": "datetime",
+      "title": "string",
+      "body": {
+        "description": "The body of the article in Markdown",
+        "type": "string"
+      }
     },
     "required": [
-      "author"
+      "author",
+      "current_version"
     ],
     "defaults": {
       "is_published": false,
@@ -139,6 +159,18 @@
   "model_name": "Article",
   "model_base_class": "Foobara::Entity",
   "model_class": "FoobaraDemo::Blog::Article",
+  "delegates": {
+    "title": {
+      "data_path": "current_version.title"
+    },
+    "body": {
+      "data_path": "current_version.body"
+    },
+    "guaranteed_to_exist": [
+      "title",
+      "body"
+    ]
+  },
   "depends_on": [
     "FoobaraDemo::Blog::User",
     "FoobaraDemo::Blog::ArticleVersion"
@@ -151,12 +183,14 @@
     "author": "FoobaraDemo::Blog::User",
     "current_draft": "FoobaraDemo::Blog::ArticleVersion",
     "current_published_version": "FoobaraDemo::Blog::ArticleVersion",
+    "current_version": "FoobaraDemo::Blog::ArticleVersion",
     "past_published_versions.#": "FoobaraDemo::Blog::ArticleVersion"
   },
   "deep_associations": {
     "author": "FoobaraDemo::Blog::User",
     "current_draft": "FoobaraDemo::Blog::ArticleVersion",
     "current_published_version": "FoobaraDemo::Blog::ArticleVersion",
+    "current_version": "FoobaraDemo::Blog::ArticleVersion",
     "past_published_versions.#": "FoobaraDemo::Blog::ArticleVersion"
   },
   "entity_name": "Article",

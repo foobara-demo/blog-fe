@@ -5,12 +5,14 @@
   "scoped_short_name": "Blog",
   "types": [
     "FoobaraDemo::Blog::Article",
+    "FoobaraDemo::Blog::ArticleSummary",
     "FoobaraDemo::Blog::ArticleVersion",
     "FoobaraDemo::Blog::User"
   ],
   "commands": [
     "FoobaraDemo::Blog::DeleteArticle",
     "FoobaraDemo::Blog::EditArticle",
+    "FoobaraDemo::Blog::FindArticleSummaries",
     "FoobaraDemo::Blog::FindArticles",
     "FoobaraDemo::Blog::PublishArticle",
     "FoobaraDemo::Blog::PublishArticleChanges",

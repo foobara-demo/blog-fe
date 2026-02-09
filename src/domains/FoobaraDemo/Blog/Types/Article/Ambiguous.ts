@@ -10,6 +10,7 @@ export interface ArticleAttributesType {
   id: number
   author: User
   is_published: boolean
+  current_version: ArticleVersion
   current_published_version?: ArticleVersion | null
   current_draft?: ArticleVersion | null
   past_published_versions: ArticleVersion[]
@@ -17,6 +18,8 @@ export interface ArticleAttributesType {
   unpublished_at?: Date | null
   originally_published_at?: Date | null
   last_edited_at?: Date
+  title: string
+  body: string
 }
 
 export class Article<
@@ -30,7 +33,7 @@ export class Article<
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return [['author'], ['current_draft'], ['current_published_version'], ['past_published_versions', '#']] }
+  get associationPropertyPaths (): string[][] { return [['author'], ['current_draft'], ['current_published_version'], ['current_version'], ['past_published_versions', '#']] }
   readonly hasAssociations: true = true
 
   get author (): AttributesType['author'] {
@@ -39,6 +42,10 @@ export class Article<
 
   get is_published (): AttributesType['is_published'] {
     return this.readAttribute('is_published')
+  }
+
+  get current_version (): AttributesType['current_version'] {
+    return this.readAttribute('current_version')
   }
 
   get current_published_version (): AttributesType['current_published_version'] {
@@ -67,5 +74,13 @@ export class Article<
 
   get last_edited_at (): AttributesType['last_edited_at'] {
     return this.readAttribute('last_edited_at')
+  }
+
+  get title (): AttributesType['title'] {
+    return this.readAttribute('title')
+  }
+
+  get body (): AttributesType['body'] {
+    return this.readAttribute('body')
   }
 }

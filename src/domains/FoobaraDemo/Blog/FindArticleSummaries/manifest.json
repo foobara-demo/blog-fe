@@ -1,18 +1,18 @@
 {
   "scoped_path": [
-    "PublishArticle"
+    "FindArticleSummaries"
   ],
-  "scoped_name": "PublishArticle",
-  "scoped_short_name": "PublishArticle",
+  "scoped_name": "FindArticleSummaries",
+  "scoped_short_name": "FindArticleSummaries",
   "scoped_prefix": null,
   "scoped_full_path": [
     "FoobaraDemo",
     "Blog",
-    "PublishArticle"
+    "FindArticleSummaries"
   ],
-  "scoped_full_name": "FoobaraDemo::Blog::PublishArticle",
+  "scoped_full_name": "FoobaraDemo::Blog::FindArticleSummaries",
   "scoped_category": "command",
-  "reference": "FoobaraDemo::Blog::PublishArticle",
+  "reference": "FoobaraDemo::Blog::FindArticleSummaries",
   "domain": "FoobaraDemo::Blog",
   "organization": "FoobaraDemo",
   "parent": [
@@ -20,37 +20,26 @@
     "FoobaraDemo::Blog"
   ],
   "types_depended_on": [
-    "FoobaraDemo::Blog::Article",
-    "FoobaraDemo::Blog::ArticleVersion",
+    "FoobaraDemo::Blog::ArticleSummary",
     "FoobaraDemo::Blog::User",
     "array",
     "attributes",
-    "boolean",
-    "datetime",
     "duck",
-    "entity",
-    "integer",
     "string",
     "symbol"
   ],
   "inputs_types_depended_on": [
-    "FoobaraDemo::Blog::Article",
+    "FoobaraDemo::Blog::User",
     "array",
     "attributes",
     "duck",
     "symbol"
   ],
   "result_types_depended_on": [
-    "FoobaraDemo::Blog::ArticleVersion",
-    "FoobaraDemo::Blog::User",
+    "FoobaraDemo::Blog::ArticleSummary",
     "array",
     "attributes",
-    "boolean",
-    "datetime",
     "duck",
-    "entity",
-    "integer",
-    "string",
     "symbol"
   ],
   "errors_types_depended_on": [
@@ -61,31 +50,22 @@
     "symbol"
   ],
   "possible_errors": {
-    "data.article.cannot_cast": {
+    "data.author.cannot_cast": {
       "path": [
-        "article"
+        "author"
       ],
       "category": "data",
       "symbol": "cannot_cast",
-      "key": "data.article.cannot_cast",
+      "key": "data.author.cannot_cast",
       "error": "Foobara::Value::Processor::Casting::CannotCastError"
     },
-    "data.article.missing_required_attribute": {
+    "data.author.not_found": {
       "path": [
-        "article"
-      ],
-      "category": "data",
-      "symbol": "missing_required_attribute",
-      "key": "data.article.missing_required_attribute",
-      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
-    },
-    "data.article.not_found": {
-      "path": [
-        "article"
+        "author"
       ],
       "category": "data",
       "symbol": "not_found",
-      "key": "data.article.not_found",
+      "key": "data.author.not_found",
       "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
       "manually_added": true
     },
@@ -94,12 +74,6 @@
       "symbol": "cannot_cast",
       "key": "data.cannot_cast",
       "error": "Foobara::Value::Processor::Casting::CannotCastError"
-    },
-    "data.missing_required_attribute": {
-      "category": "data",
-      "symbol": "missing_required_attribute",
-      "key": "data.missing_required_attribute",
-      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
     },
     "data.unexpected_attributes": {
       "category": "data",
@@ -120,27 +94,36 @@
       "error": "Foobara::CommandConnector::UnauthenticatedError"
     }
   },
+  "depends_on": [
+    "FoobaraDemo::Blog::FindArticles"
+  ],
   "inputs_type": {
     "type": "attributes",
     "element_type_declarations": {
-      "article": "FoobaraDemo::Blog::Article"
+      "author": "FoobaraDemo::Blog::User"
     },
-    "required": [
-      "article"
-    ]
+    "defaults": {
+      "author": "#<Proc:0x00007f1b4dea7ee0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:30 (lambda)>"
+    }
   },
   "description": null,
-  "result_type": "FoobaraDemo::Blog::Article",
+  "result_type": {
+    "type": "array",
+    "element_type_declaration": "FoobaraDemo::Blog::ArticleSummary"
+  },
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
   ],
   "pre_commit_transformers": [
-    "Foobara::CommandConnectors::Transformers::LoadDelegatedAttributesEntitiesPreCommitTransformer"
+    "Foobara::CommandConnectors::Transformers::LoadAggregatesPreCommitTransformer"
   ],
   "serializers": [
     "Foobara::CommandConnectors::Serializers::ErrorsSerializer",
-    "Foobara::CommandConnectors::Serializers::AtomicSerializer",
-    "Foobara::CommandConnectors::Serializers::JsonSerializer"
+    "Foobara::CommandConnectors::Serializers::JsonSerializer",
+    "Foobara::CommandConnectors::Serializers::AggregateSerializer"
+  ],
+  "request_mutators": [
+    "Foobara::CommandConnectors::Http::DefaultInputsRequestMutator::Anon3"
   ],
   "requires_authentication": true,
   "authenticator": {

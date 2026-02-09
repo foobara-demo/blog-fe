@@ -160,8 +160,8 @@
         "type": "string"
       },
       "body": {
-        "description": "The new body of the article in Markdown",
         "allow_nil": true,
+        "description": "The new body of the article in Markdown",
         "type": "string"
       }
     },
@@ -173,6 +173,9 @@
   "result_type": "FoobaraDemo::Blog::Article",
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
+  ],
+  "pre_commit_transformers": [
+    "Foobara::CommandConnectors::Transformers::LoadDelegatedAttributesEntitiesPreCommitTransformer"
   ],
   "serializers": [
     "Foobara::CommandConnectors::Serializers::ErrorsSerializer",

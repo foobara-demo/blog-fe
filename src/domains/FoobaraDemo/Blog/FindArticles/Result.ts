@@ -1,7 +1,5 @@
-// wtf this is wrong should be an article atom, right??
+import { type ArticleAggregate } from '../../../FoobaraDemo/Blog/Types/Article/Aggregate'
 
-import { type UnloadedArticle } from '../../../FoobaraDemo/Blog/Types/Article/Unloaded'
-
-type Result = UnloadedArticle[]
+type Result = ArticleAggregate[]
 
 export default Result

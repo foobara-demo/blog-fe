@@ -1,0 +1,231 @@
+{
+  "scoped_path": [
+    "ArticleSummary"
+  ],
+  "scoped_name": "ArticleSummary",
+  "scoped_short_name": "ArticleSummary",
+  "scoped_prefix": null,
+  "scoped_full_path": [
+    "FoobaraDemo",
+    "Blog",
+    "ArticleSummary"
+  ],
+  "scoped_full_name": "FoobaraDemo::Blog::ArticleSummary",
+  "scoped_category": "type",
+  "reference": "FoobaraDemo::Blog::ArticleSummary",
+  "domain": "FoobaraDemo::Blog",
+  "organization": "FoobaraDemo",
+  "parent": [
+    "domain",
+    "FoobaraDemo::Blog"
+  ],
+  "declaration_data": {
+    "type": "model",
+    "name": "ArticleSummary",
+    "model_module": "FoobaraDemo::Blog",
+    "model_class": "FoobaraDemo::Blog::ArticleSummary",
+    "model_base_class": "Foobara::Model",
+    "attributes_declaration": {
+      "type": "attributes",
+      "element_type_declarations": {
+        "article_id": "integer",
+        "author": "FoobaraDemo::Blog::User",
+        "is_published": "boolean",
+        "published_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "unpublished_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "current_title": "string",
+        "originally_published_at": {
+          "allow_nil": true,
+          "type": "datetime"
+        },
+        "last_edited_at": "datetime"
+      },
+      "required": [
+        "article_id",
+        "author",
+        "current_title"
+      ],
+      "defaults": {
+        "is_published": false
+      }
+    }
+  },
+  "possible_errors": {
+    "data.article_id.cannot_cast": {
+      "path": [
+        "article_id"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.article_id.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.article_id.missing_required_attribute": {
+      "path": [
+        "article_id"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.article_id.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.author.cannot_cast": {
+      "path": [
+        "author"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.author.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.author.missing_required_attribute": {
+      "path": [
+        "author"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.author.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.cannot_cast": {
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.current_title.cannot_cast": {
+      "path": [
+        "current_title"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.current_title.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.current_title.missing_required_attribute": {
+      "path": [
+        "current_title"
+      ],
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.current_title.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.is_published.cannot_cast": {
+      "path": [
+        "is_published"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.is_published.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.last_edited_at.cannot_cast": {
+      "path": [
+        "last_edited_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.last_edited_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.missing_required_attribute": {
+      "category": "data",
+      "symbol": "missing_required_attribute",
+      "key": "data.missing_required_attribute",
+      "error": "attributes::SupportedValidators::Required::MissingRequiredAttributeError"
+    },
+    "data.originally_published_at.cannot_cast": {
+      "path": [
+        "originally_published_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.originally_published_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.published_at.cannot_cast": {
+      "path": [
+        "published_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.published_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    },
+    "data.unexpected_attributes": {
+      "category": "data",
+      "symbol": "unexpected_attributes",
+      "key": "data.unexpected_attributes",
+      "error": "attributes::SupportedProcessors::ElementTypeDeclarations::UnexpectedAttributesError"
+    },
+    "data.unpublished_at.cannot_cast": {
+      "path": [
+        "unpublished_at"
+      ],
+      "category": "data",
+      "symbol": "cannot_cast",
+      "key": "data.unpublished_at.cannot_cast",
+      "error": "Foobara::Value::Processor::Casting::CannotCastError"
+    }
+  },
+  "name": "ArticleSummary",
+  "target_classes": [
+    "FoobaraDemo::Blog::ArticleSummary"
+  ],
+  "types_depended_on": [
+    "FoobaraDemo::Blog::User",
+    "array",
+    "attributes",
+    "boolean",
+    "datetime",
+    "duck",
+    "integer",
+    "model",
+    "string",
+    "symbol"
+  ],
+  "description": null,
+  "base_type": "model",
+  "attributes_type": {
+    "type": "attributes",
+    "element_type_declarations": {
+      "article_id": "integer",
+      "author": "FoobaraDemo::Blog::User",
+      "is_published": "boolean",
+      "published_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "unpublished_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "current_title": "string",
+      "originally_published_at": {
+        "allow_nil": true,
+        "type": "datetime"
+      },
+      "last_edited_at": "datetime"
+    },
+    "required": [
+      "article_id",
+      "author",
+      "current_title"
+    ],
+    "defaults": {
+      "is_published": false
+    }
+  },
+  "organization_name": "FoobaraDemo",
+  "domain_name": "Blog",
+  "model_name": "ArticleSummary",
+  "model_base_class": "Foobara::Model",
+  "model_class": "FoobaraDemo::Blog::ArticleSummary"
+}

@@ -12,6 +12,7 @@ export interface ArticleAggregateAttributesType extends ArticleAttributesType {
   id: number
   author: LoadedUser
   is_published: boolean
+  current_version: LoadedArticleVersion
   current_published_version?: LoadedArticleVersion | null
   current_draft?: LoadedArticleVersion | null
   past_published_versions: LoadedArticleVersion[]
@@ -19,6 +20,8 @@ export interface ArticleAggregateAttributesType extends ArticleAttributesType {
   unpublished_at?: Date | null
   originally_published_at?: Date | null
   last_edited_at?: Date
+  title: string
+  body: string
 }
 
 export class ArticleAggregate extends LoadedArticle<ArticleAggregateAttributesType> {

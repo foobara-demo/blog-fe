@@ -15,7 +15,7 @@ function Articles () {
       {articles?.map((article) => (
         <div key={article.id}>
           <h2>{article.title}</h2>
-          <p>{article.content}</p>
+          <p>{article.current_version.body}</p>
         </div>
       ))}
     </>

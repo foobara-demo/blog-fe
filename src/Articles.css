@@ -15,22 +15,40 @@
   font-size: 2.5rem;
 }
 
-.placeholder {
+.articles-table {
+  width: 100%;
+  border-collapse: collapse;
   background: white;
-  padding: 60px 40px;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
 }
 
-.placeholder p {
-  font-size: 1.25rem;
+.articles-table thead {
+  background-color: #2d3748;
+  color: white;
+}
+
+.articles-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.articles-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
   color: #4a5568;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
-.placeholder-note {
-  font-size: 1rem;
-  color: #718096;
-  font-style: italic;
+.articles-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.articles-table tbody tr:hover {
+  background-color: #f7fafc;
 }

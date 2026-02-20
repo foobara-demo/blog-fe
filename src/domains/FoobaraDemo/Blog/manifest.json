@@ -12,6 +12,7 @@
   "commands": [
     "FoobaraDemo::Blog::DeleteArticle",
     "FoobaraDemo::Blog::EditArticle",
+    "FoobaraDemo::Blog::FindArticle",
     "FoobaraDemo::Blog::FindArticleSummaries",
     "FoobaraDemo::Blog::FindArticles",
     "FoobaraDemo::Blog::PublishArticle",

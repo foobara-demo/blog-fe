@@ -100,7 +100,7 @@
       "author": "FoobaraDemo::Blog::User"
     },
     "defaults": {
-      "author": "#<Proc:0x00007f1b4deaffc8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:26 (lambda)>"
+      "author": "#<Proc:0x00007fc7524bc0a0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:29 (lambda)>"
     }
   },
   "description": null,

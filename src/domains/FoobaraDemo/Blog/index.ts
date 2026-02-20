@@ -10,6 +10,8 @@ export { EditArticle } from '../../FoobaraDemo/Blog/EditArticle'
 
 export * as EditArticleErrors from '../../FoobaraDemo/Blog/EditArticle/errors'
 
+export { FindArticle } from '../../FoobaraDemo/Blog/FindArticle'
+
 export { FindArticleSummaries } from '../../FoobaraDemo/Blog/FindArticleSummaries'
 
 export { FindArticles } from '../../FoobaraDemo/Blog/FindArticles'

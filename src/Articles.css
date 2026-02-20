@@ -52,3 +52,14 @@
 .articles-table tbody tr:hover {
   background-color: #f7fafc;
 }
+
+.edit-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.edit-link:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}

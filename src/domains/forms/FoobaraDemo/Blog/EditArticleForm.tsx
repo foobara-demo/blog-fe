@@ -7,14 +7,12 @@ import { EditArticle } from '../../../FoobaraDemo/Blog/EditArticle'
 import type EditArticleInputs from '../../../FoobaraDemo/Blog/EditArticle/Inputs'
 
 import type EditArticleResult from '../../../FoobaraDemo/Blog/EditArticle/Result'
+import type { LoadedArticle } from '../../../FoobaraDemo/Blog/Types/Article/Loaded'
 import { type Error as EditArticleError } from '../../../FoobaraDemo/Blog/EditArticle/Errors'
 
-export default function EditArticleForm (): JSX.Element {
-  const [article, setArticle] = useState<number | undefined>(undefined)
-
-  const [title, setTitle] = useState<string | null | undefined>(undefined)
-
-  const [body, setBody] = useState<string | null | undefined>(undefined)
+export default function EditArticleForm ({ article }: { article: LoadedArticle }): JSX.Element {
+  const [title, setTitle] = useState<string>(article.title)
+  const [body, setBody] = useState<string>(article.body)
 
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -26,23 +24,8 @@ export default function EditArticleForm (): JSX.Element {
   }
 
   const run = toVoid(async (): Promise<void> => {
-    if (article == null) {
-      // TODO: perform some kind of validation error
-      return
-    }
-
-    if (title == null) {
-      // TODO: perform some kind of validation error
-      return
-    }
-
-    if (body == null) {
-      // TODO: perform some kind of validation error
-      return
-    }
-
     const inputs: EditArticleInputs = {
-      article,
+      article: article.id,
       title,
       body
     }
@@ -50,13 +33,12 @@ export default function EditArticleForm (): JSX.Element {
     const command = new EditArticle(inputs)
 
     try {
-      setResult('Thinking...')
+      setResult('Saving...')
       setError(null)
       const outcome: Outcome<EditArticleResult, EditArticleError> = await command.run()
 
       if (outcome.isSuccess()) {
-        const result: EditArticleResult = outcome.result
-        setResult(typeof result === 'string' ? result : JSON.stringify(result))
+        setResult('Article updated successfully!')
       } else {
         setError(outcome.errorMessage)
         setResult(null)
@@ -70,29 +52,19 @@ export default function EditArticleForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <input
+          value={title}
+          onChange={(e) => { setTitle(e.target.value) }}
+          placeholder="Title"
+        />
 
-          value={article ?? ''}
-          onChange={(e) => { setArticle(parseInt(e.target.value)) }}
-          placeholder="article"
-                  />
+        <textarea
+          value={body}
+          onChange={(e) => { setBody(e.target.value) }}
+          placeholder="Body"
+        />
 
-        <input
-
-          value={title ?? ''}
-          onChange={(e) => { setTitle(e.target.value as string | null) }}
-          placeholder="title"
-                  />
-
-        <input
-
-          value={body ?? ''}
-          onChange={(e) => { setBody(e.target.value as string | null) }}
-          placeholder="body"
-                  />
-
-        <button onClick={run}>Edit article</button>
+        <button onClick={run}>Save Changes</button>
       </div>
 
       {(result != null) && <p>{result}</p>}

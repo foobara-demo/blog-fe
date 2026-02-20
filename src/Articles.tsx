@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import useQuery from './domains/hooks/useQuery'
 import { FindArticles } from './domains/FoobaraDemo/Blog/FindArticles'
 import './Articles.css'
@@ -26,6 +27,7 @@ function Articles () {
             <th>Published</th>
             <th>Published At</th>
             <th>Last Edited</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -37,6 +39,7 @@ function Articles () {
               <td>{article.is_published ? 'Yes' : 'No'}</td>
               <td>{formatDate(article.published_at)}</td>
               <td>{formatDate(article.last_edited_at)}</td>
+              <td><Link to={`/articles/${article.id}/edit`} className="edit-link">Edit</Link></td>
             </tr>
           ))}
         </tbody>

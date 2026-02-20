@@ -1,3 +1,5 @@
+import { GetCurrentUser } from '../../../FoobaraDemo/BlogAuth/GetCurrentUser'
+
 import RemoteCommand from '../../../base/RemoteCommand'
 
 import type Inputs from './Inputs'
@@ -13,5 +15,15 @@ export class Register extends RemoteCommand<Inputs, Result, Error> {
 
   castJsonResult (json: any): Result {
     return castJsonResult(json)
+  }
+
+  dirties (): Array<[any] | [any, string, any]> {
+    const queries: Array<[any] | [any, string, any]> = [
+
+      [GetCurrentUser]
+
+    ]
+
+    return queries
   }
 }

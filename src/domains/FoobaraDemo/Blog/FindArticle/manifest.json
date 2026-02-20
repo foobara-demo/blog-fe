@@ -158,6 +158,7 @@
     }
   },
   "description": null,
+  "is_query": true,
   "result_type": "FoobaraDemo::Blog::Article",
   "errors_transformers": [
     "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"

@@ -140,7 +140,7 @@
       "title"
     ],
     "defaults": {
-      "author": "#<Proc:0x00007fc752330bc8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:18 (lambda)>"
+      "author": "[<Lazily Set>]"
     }
   },
   "description": null,

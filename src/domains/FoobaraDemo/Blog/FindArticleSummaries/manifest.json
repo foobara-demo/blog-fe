@@ -103,10 +103,11 @@
       "author": "FoobaraDemo::Blog::User"
     },
     "defaults": {
-      "author": "#<Proc:0x00007fc7524b4df0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:33 (lambda)>"
+      "author": "[<Lazily Set>]"
     }
   },
   "description": null,
+  "is_query": true,
   "result_type": {
     "type": "array",
     "element_type_declaration": "FoobaraDemo::Blog::ArticleSummary"

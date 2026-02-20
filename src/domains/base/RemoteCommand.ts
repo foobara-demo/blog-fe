@@ -1,6 +1,8 @@
 import { type Outcome, SuccessfulOutcome, ErrorOutcome } from './Outcome'
 import { type FoobaraError } from './Error'
 
+import { dirtyQuery } from './QueryCache'
+
 export default abstract class RemoteCommand<Inputs, Result, CommandError extends FoobaraError> {
   static _urlBase: string | undefined
   static commandName: string
@@ -105,6 +107,8 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return json
   }
 
+  dirties (): Array<[any] | [any, string, any]> { return [] }
+
   async _handleResponse (response: Response): Promise<Outcome<Result, CommandError>> {
     const text = await response.text()
     const body = JSON.parse(text)
@@ -114,6 +118,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
 
       this.outcome = new SuccessfulOutcome<Result, CommandError>(result)
       this.commandState = 'succeeded'
+      this.dirtyQueries()
     } else if (response.status === 422 || response.status === 401 || response.status === 403) {
       this.commandState = 'errored'
       this.outcome = new ErrorOutcome<Result, CommandError>(body)
@@ -123,5 +128,17 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     }
 
     return this.outcome
+  }
+
+  dirtyQueries () {
+    for (const [commandClass, inputs] of this.dirties()) {
+      if (inputs != null) {
+        for (const [propertyName, value] of Object.entries(inputs)) {
+          dirtyQuery(commandClass, propertyName, value)
+        }
+      } else {
+        dirtyQuery(commandClass)
+      }
+    }
   }
 }

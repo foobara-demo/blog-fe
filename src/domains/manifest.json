@@ -502,7 +502,8 @@
       "response_mutators": [
         "Foobara::AuthHttp::MoveRefreshTokenToCookie",
         "Foobara::AuthHttp::MoveAccessTokenToHeader"
-      ]
+      ],
+      "requires_authentication": false
     },
     "Foobara::Auth::Logout": {
       "scoped_path": [
@@ -736,7 +737,8 @@
       ],
       "request_mutators": [
         "Foobara::AuthHttp::SetRefreshTokenFromCookie"
-      ]
+      ],
+      "requires_authentication": false
     },
     "FoobaraDemo::Blog::DeleteArticle": {
       "scoped_path": [
@@ -1217,6 +1219,7 @@
         }
       },
       "description": null,
+      "is_query": true,
       "result_type": "FoobaraDemo::Blog::Article",
       "errors_transformers": [
         "Foobara::CommandConnectors::Transformers::AuthErrorsTransformer"
@@ -1340,10 +1343,11 @@
           "author": "FoobaraDemo::Blog::User"
         },
         "defaults": {
-          "author": "#<Proc:0x00007fc7524b4df0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:33 (lambda)>"
+          "author": "[<Lazily Set>]"
         }
       },
       "description": null,
+      "is_query": true,
       "result_type": {
         "type": "array",
         "element_type_declaration": "FoobaraDemo::Blog::ArticleSummary"
@@ -1470,10 +1474,11 @@
           "author": "FoobaraDemo::Blog::User"
         },
         "defaults": {
-          "author": "#<Proc:0x00007fc7524bc0a0 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:29 (lambda)>"
+          "author": "[<Lazily Set>]"
         }
       },
       "description": null,
+      "is_query": true,
       "result_type": {
         "type": "array",
         "element_type_declaration": "FoobaraDemo::Blog::Article"
@@ -1940,7 +1945,7 @@
           "title"
         ],
         "defaults": {
-          "author": "#<Proc:0x00007fc752330bc8 /home/miles/gitlocal/foobara-demo/blog-rack/boot/http.rb:18 (lambda)>"
+          "author": "[<Lazily Set>]"
         }
       },
       "description": null,
@@ -2209,6 +2214,7 @@
         "element_type_declarations": {}
       },
       "description": null,
+      "is_query": true,
       "result_type": "FoobaraDemo::BlogAuth::User",
       "result_transformers": [
         "SensitiveValueRemover::FoobaraDemo::BlogAuth::User"
@@ -5912,8 +5918,8 @@
     }
   },
   "metadata": {
-    "when": "2026-02-19 19:16:36 -0800",
-    "foobara_version": "0.5.4",
+    "when": "2026-03-06 16:57:34 -0800",
+    "foobara_version": "0.5.9",
     "url": "http://localhost:9292/manifest"
   }
 }

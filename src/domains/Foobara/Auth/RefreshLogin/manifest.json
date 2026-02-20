@@ -121,5 +121,6 @@
   ],
   "request_mutators": [
     "Foobara::AuthHttp::SetRefreshTokenFromCookie"
-  ]
+  ],
+  "requires_authentication": false
 }

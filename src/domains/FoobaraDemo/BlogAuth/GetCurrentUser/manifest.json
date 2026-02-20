@@ -92,6 +92,7 @@
     "element_type_declarations": {}
   },
   "description": null,
+  "is_query": true,
   "result_type": "FoobaraDemo::BlogAuth::User",
   "result_transformers": [
     "SensitiveValueRemover::FoobaraDemo::BlogAuth::User"

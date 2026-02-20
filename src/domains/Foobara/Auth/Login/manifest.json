@@ -156,5 +156,6 @@
   "response_mutators": [
     "Foobara::AuthHttp::MoveRefreshTokenToCookie",
     "Foobara::AuthHttp::MoveAccessTokenToHeader"
-  ]
+  ],
+  "requires_authentication": false
 }

@@ -2,4 +2,4 @@ import { type ArticleAggregate } from '../../../FoobaraDemo/Blog/Types/Article/A
 
 type Result = ArticleAggregate[]
 
-export default Result
+export type { Result as default }

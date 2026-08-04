@@ -4,4 +4,4 @@ interface Inputs {
   body?: string | null
 }
 
-export default Inputs
+export type { Inputs as default }

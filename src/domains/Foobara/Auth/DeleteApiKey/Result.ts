@@ -1,3 +1,3 @@
 type Result = null
 
-export default Result
+export type { Result as default }

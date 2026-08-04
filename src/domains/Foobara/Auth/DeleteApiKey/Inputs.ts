@@ -2,4 +2,4 @@ interface Inputs {
   token: string
 }
 
-export default Inputs
+export type { Inputs as default }

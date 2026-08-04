@@ -3,4 +3,4 @@ interface Inputs {
   title: string
 }
 
-export default Inputs
+export type { Inputs as default }

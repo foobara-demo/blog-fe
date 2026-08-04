@@ -1,3 +1,3 @@
 type Result = any
 
-export default Result
+export type { Result as default }

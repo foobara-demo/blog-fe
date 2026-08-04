@@ -5,4 +5,4 @@ interface Inputs {
   full_name: string
 }
 
-export default Inputs
+export type { Inputs as default }

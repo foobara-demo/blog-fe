@@ -5918,8 +5918,8 @@
     }
   },
   "metadata": {
-    "when": "2026-03-06 16:57:34 -0800",
-    "foobara_version": "0.5.9",
-    "url": "http://localhost:9292/manifest"
+    "when": "2026-08-04 00:43:45 +0000",
+    "foobara_version": "0.5.10",
+    "url": "https://app.blog-demo.foobara.org:443/manifest"
   }
 }

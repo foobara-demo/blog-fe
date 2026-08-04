@@ -39,11 +39,17 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Regenerating the TypeScript SDK
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can regenerate the TypeScript SDK by running:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+foob g typescript-remote-commands --auto-dirty-queries --manifest-url https://app.blog-demo.foobara.org/manifest
+```
+
+However, do not commit anything that changes process.env to import.meta.env as it doesn't work in this project!
+
+TODO: Update or regenerate this project to use Vite
 
 ## License
 

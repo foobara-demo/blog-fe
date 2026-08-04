@@ -2,4 +2,4 @@ import { type ApiKeySummary } from '../../../Foobara/Auth/Types/ApiKeySummary/Ap
 
 type Result = ApiKeySummary[]
 
-export default Result
+export type { Result as default }

@@ -1,3 +1,3 @@
 type Inputs = undefined
 
-export default Inputs
+export type { Inputs as default }

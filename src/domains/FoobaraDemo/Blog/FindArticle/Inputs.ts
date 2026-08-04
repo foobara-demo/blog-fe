@@ -4,4 +4,4 @@ interface Inputs {
   load_paths?: any
 }
 
-export default Inputs
+export type { Inputs as default }

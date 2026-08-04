@@ -2,4 +2,4 @@ interface Inputs {
   author?: number
 }
 
-export default Inputs
+export type { Inputs as default }

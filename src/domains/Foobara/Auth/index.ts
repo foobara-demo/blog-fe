@@ -24,7 +24,7 @@ export * as RefreshLoginErrors from '../../Foobara/Auth/RefreshLogin/errors'
 
 export { ApiKeySummary } from '../../Foobara/Auth/Types/ApiKeySummary/ApiKeySummary'
 
-export type { token_state } from '../../Foobara/Auth/Types/token_state'
+export { type token_state } from '../../Foobara/Auth/Types/token_state'
 
 export { User } from '../../Foobara/Auth/Types/User/Ambiguous'
 

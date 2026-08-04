@@ -2,4 +2,4 @@ import { type UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Agg
 
 type Result = UserAggregate
 
-export default Result
+export type { Result as default }

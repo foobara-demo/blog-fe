@@ -3,4 +3,4 @@ interface Inputs {
   plaintext_password: string
 }
 
-export default Inputs
+export type { Inputs as default }

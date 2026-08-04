@@ -5,12 +5,12 @@ function Home () {
   return (
     <div className="Home">
       <section className="hero">
-        <h1 className="hero-title">Foobara Blog</h1>
+        <h1 className="hero-title">Foobara Blog Demo</h1>
         <p className="hero-description">
-          A demo blog application built with Foobara and React!
+          An in-progress demo blog application built with Foobara!
         </p>
         <p className="hero-description">
-          Create, edit, and publish articles with ease.
+          Useful for playing around with and testing out Foobara
         </p>
       </section>
     </div>

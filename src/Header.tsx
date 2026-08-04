@@ -32,7 +32,7 @@ const Header: React.FC = () => {
             to="/"
             end
             className={activeClassName}>
-            FOOBARA BLOG
+            Home
           </NavLink>
         </li>
         {isLoggedIn && (

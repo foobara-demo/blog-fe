@@ -68,7 +68,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.user.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "runtime.unauthenticated": {
@@ -191,7 +191,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.token.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.unexpected_attributes": {
@@ -308,7 +308,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.user.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "runtime.unauthenticated": {
@@ -809,7 +809,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -958,7 +958,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.body.cannot_cast": {
@@ -1157,7 +1157,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -1306,7 +1306,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.author.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -1440,7 +1440,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.author.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -1591,7 +1591,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -1741,7 +1741,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -1883,7 +1883,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.author.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -2058,7 +2058,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.article.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "data.cannot_cast": {
@@ -2199,7 +2199,7 @@
           "category": "data",
           "symbol": "not_found",
           "key": "data.user.not_found",
-          "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+          "error": "Foobara::Entity::NotFoundError",
           "manually_added": true
         },
         "runtime.unauthenticated": {
@@ -3057,30 +3057,24 @@
       "error_class": "Foobara::CommandConnector::UnauthenticatedError",
       "base_error": "Foobara::CommandConnector::CommandConnectorError"
     },
-    "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError": {
+    "Foobara::Entity::NotFoundError": {
       "scoped_path": [
-        "CommandPatternImplementation",
-        "Concerns",
-        "Runtime",
+        "Entity",
         "NotFoundError"
       ],
-      "scoped_name": "CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "scoped_name": "Entity::NotFoundError",
       "scoped_short_name": "NotFoundError",
       "scoped_prefix": [
-        "CommandPatternImplementation",
-        "Concerns",
-        "Runtime"
+        "Entity"
       ],
       "scoped_full_path": [
         "Foobara",
-        "CommandPatternImplementation",
-        "Concerns",
-        "Runtime",
+        "Entity",
         "NotFoundError"
       ],
-      "scoped_full_name": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "scoped_full_name": "Foobara::Entity::NotFoundError",
       "scoped_category": "error",
-      "reference": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "reference": "Foobara::Entity::NotFoundError",
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
@@ -3100,14 +3094,12 @@
         "type": "attributes",
         "element_type_declarations": {
           "entity_class": "string",
-          "criteria": "duck"
-        },
-        "required": [
-          "entity_class"
-        ]
+          "criteria": "duck",
+          "data_path": "string"
+        }
       },
       "is_fatal": false,
-      "error_class": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "error_class": "Foobara::Entity::NotFoundError",
       "base_error": "Foobara::Value::DataError"
     },
     "Foobara::RuntimeError": {
@@ -5918,8 +5910,8 @@
     }
   },
   "metadata": {
-    "when": "2026-08-04 00:43:45 +0000",
-    "foobara_version": "0.5.10",
-    "url": "https://app.blog-demo.foobara.org:443/manifest"
+    "when": "2026-08-22 18:32:19 -0700",
+    "foobara_version": "0.6.1",
+    "url": "http://localhost:9292/manifest"
   }
 }

@@ -65,7 +65,7 @@
   "Foobara/config.ts",
   "Foobara/errors/CommandConnector/NotAllowedError.ts",
   "Foobara/errors/CommandConnector/UnauthenticatedError.ts",
-  "Foobara/errors/CommandPatternImplementation/Concerns/Runtime/NotFoundError.ts",
+  "Foobara/errors/Entity/NotFoundError.ts",
   "Foobara/index.ts",
   "Foobara/manifest.json",
   "FoobaraDemo/Blog/DeleteArticle/Errors.ts",

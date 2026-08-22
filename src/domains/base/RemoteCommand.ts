@@ -9,7 +9,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   static organizationName: string
   static domainName: string
 
-  // TODO: make use of domain's config instead of process.env directly.
+  // TODO: make use of domain's config instead of import.meta.env directly.
   static get urlBase (): string {
     let base = this._urlBase
 
@@ -118,6 +118,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
 
       this.outcome = new SuccessfulOutcome<Result, CommandError>(result)
       this.commandState = 'succeeded'
+
       this.dirtyQueries()
     } else if (response.status === 422 || response.status === 401 || response.status === 403) {
       this.commandState = 'errored'

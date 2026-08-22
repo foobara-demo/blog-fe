@@ -67,7 +67,7 @@
       "category": "data",
       "symbol": "not_found",
       "key": "data.user.not_found",
-      "error": "Foobara::CommandPatternImplementation::Concerns::Runtime::NotFoundError",
+      "error": "Foobara::Entity::NotFoundError",
       "manually_added": true
     },
     "runtime.unauthenticated": {

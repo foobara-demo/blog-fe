@@ -1,6 +1,6 @@
 import { type UnauthenticatedError } from '../../../Foobara/errors/CommandConnector/UnauthenticatedError'
 
-import { type NotFoundError } from '../../../Foobara/errors/CommandPatternImplementation/Concerns/Runtime/NotFoundError'
+import { type NotFoundError } from '../../../Foobara/errors/Entity/NotFoundError'
 
 import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 

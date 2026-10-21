@@ -87,8 +87,8 @@
       },
       "description": null,
       "result_type": {
-        "type": "string",
-        "sensitive_exposed": true
+        "sensitive_exposed": true,
+        "type": "string"
       },
       "inputs_transformers": [
         "needs_approval"
@@ -2931,12 +2931,14 @@
     },
     "Foobara::CommandConnector::CommandConnectorError": {
       "scoped_path": [
+        "Foobara",
         "CommandConnector",
         "CommandConnectorError"
       ],
-      "scoped_name": "CommandConnector::CommandConnectorError",
+      "scoped_name": "Foobara::CommandConnector::CommandConnectorError",
       "scoped_short_name": "CommandConnectorError",
       "scoped_prefix": [
+        "Foobara",
         "CommandConnector"
       ],
       "scoped_full_path": [
@@ -2950,8 +2952,8 @@
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
-        "organization",
-        "Foobara"
+        "domain",
+        "global_organization::global_domain"
       ],
       "types_depended_on": [
         "array",
@@ -2971,12 +2973,14 @@
     },
     "Foobara::CommandConnector::NotAllowedError": {
       "scoped_path": [
+        "Foobara",
         "CommandConnector",
         "NotAllowedError"
       ],
-      "scoped_name": "CommandConnector::NotAllowedError",
+      "scoped_name": "Foobara::CommandConnector::NotAllowedError",
       "scoped_short_name": "NotAllowedError",
       "scoped_prefix": [
+        "Foobara",
         "CommandConnector"
       ],
       "scoped_full_path": [
@@ -2990,8 +2994,8 @@
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
-        "organization",
-        "Foobara"
+        "domain",
+        "global_organization::global_domain"
       ],
       "types_depended_on": [
         "array",
@@ -3019,12 +3023,14 @@
     },
     "Foobara::CommandConnector::UnauthenticatedError": {
       "scoped_path": [
+        "Foobara",
         "CommandConnector",
         "UnauthenticatedError"
       ],
-      "scoped_name": "CommandConnector::UnauthenticatedError",
+      "scoped_name": "Foobara::CommandConnector::UnauthenticatedError",
       "scoped_short_name": "UnauthenticatedError",
       "scoped_prefix": [
+        "Foobara",
         "CommandConnector"
       ],
       "scoped_full_path": [
@@ -3038,8 +3044,8 @@
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
-        "organization",
-        "Foobara"
+        "domain",
+        "global_organization::global_domain"
       ],
       "types_depended_on": [
         "array",
@@ -3059,12 +3065,14 @@
     },
     "Foobara::Entity::NotFoundError": {
       "scoped_path": [
+        "Foobara",
         "Entity",
         "NotFoundError"
       ],
-      "scoped_name": "Entity::NotFoundError",
+      "scoped_name": "Foobara::Entity::NotFoundError",
       "scoped_short_name": "NotFoundError",
       "scoped_prefix": [
+        "Foobara",
         "Entity"
       ],
       "scoped_full_path": [
@@ -3078,8 +3086,8 @@
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
-        "organization",
-        "Foobara"
+        "domain",
+        "global_organization::global_domain"
       ],
       "types_depended_on": [
         "array",
@@ -3104,11 +3112,14 @@
     },
     "Foobara::RuntimeError": {
       "scoped_path": [
+        "Foobara",
         "RuntimeError"
       ],
-      "scoped_name": "RuntimeError",
+      "scoped_name": "Foobara::RuntimeError",
       "scoped_short_name": "RuntimeError",
-      "scoped_prefix": null,
+      "scoped_prefix": [
+        "Foobara"
+      ],
       "scoped_full_path": [
         "Foobara",
         "RuntimeError"
@@ -3119,8 +3130,8 @@
       "domain": "global_organization::global_domain",
       "organization": "global_organization",
       "parent": [
-        "organization",
-        "Foobara"
+        "domain",
+        "global_organization::global_domain"
       ],
       "category": "runtime",
       "symbol": "runtime",
@@ -5910,8 +5921,8 @@
     }
   },
   "metadata": {
-    "when": "2026-08-22 18:32:19 -0700",
-    "foobara_version": "0.6.1",
+    "when": "2026-10-21 13:21:27 -0700",
+    "foobara_version": "0.7.5",
     "url": "http://localhost:9292/manifest"
   }
 }

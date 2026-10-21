@@ -85,8 +85,8 @@
   },
   "description": null,
   "result_type": {
-    "type": "string",
-    "sensitive_exposed": true
+    "sensitive_exposed": true,
+    "type": "string"
   },
   "inputs_transformers": [
     "needs_approval"

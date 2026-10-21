@@ -1,4 +1,4 @@
-import { DataError } from '../../../base/Error'
+import { DataError } from '../../../../base/Error'
 
 export class NotFoundError extends DataError<{
   entity_class?: string

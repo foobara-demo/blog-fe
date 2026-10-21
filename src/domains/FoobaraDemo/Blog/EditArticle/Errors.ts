@@ -1,8 +1,8 @@
-import { type NotAllowedError } from '../../../Foobara/errors/CommandConnector/NotAllowedError'
+import { type NotAllowedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/NotAllowedError'
 
-import { type UnauthenticatedError } from '../../../Foobara/errors/CommandConnector/UnauthenticatedError'
+import { type UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
 
-import { type NotFoundError } from '../../../Foobara/errors/Entity/NotFoundError'
+import { type NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
 
 import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 

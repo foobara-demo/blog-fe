@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -7,13 +7,15 @@ import { CreateApiKey } from '../../../Foobara/Auth/CreateApiKey'
 import type CreateApiKeyResult from '../../../Foobara/Auth/CreateApiKey/Result'
 import { type Error as CreateApiKeyError } from '../../../Foobara/Auth/CreateApiKey/Errors'
 
-export default function CreateApiKeyForm (): JSX.Element {
+export default function CreateApiKeyForm(): JSX.Element {
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -41,12 +43,11 @@ export default function CreateApiKeyForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <button onClick={run}>Create api key</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

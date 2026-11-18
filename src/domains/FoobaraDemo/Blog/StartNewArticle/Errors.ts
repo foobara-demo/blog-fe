@@ -1,17 +1,16 @@
-import { type NotAllowedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/NotAllowedError'
+import { NotAllowedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/NotAllowedError'
 
-import { type UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
+import { UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
 
-import { type NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
+import { NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
 
-import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
+import { CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 
-import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
+import { UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
-import { type MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
+import { MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
 
 export interface PossibleErrors {
-
   'data.author.cannot_cast': CannotCastError
 
   'data.author.not_found': NotFoundError
@@ -29,12 +28,12 @@ export interface PossibleErrors {
   'runtime.not_allowed': NotAllowedError
 
   'runtime.unauthenticated': UnauthenticatedError
-
 }
 
-export type Error = NotAllowedError |
-UnauthenticatedError |
-NotFoundError |
-CannotCastError |
-MissingRequiredAttributeError |
-UnexpectedAttributesError
+export type Error =
+  | NotAllowedError
+  | UnauthenticatedError
+  | NotFoundError
+  | CannotCastError
+  | MissingRequiredAttributeError
+  | UnexpectedAttributesError

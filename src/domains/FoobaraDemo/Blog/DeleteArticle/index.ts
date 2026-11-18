@@ -13,19 +13,11 @@ export class DeleteArticle extends RequiresAuthCommand<Inputs, Result, Error> {
   static readonly domainName = 'Blog'
   static readonly commandName = 'DeleteArticle'
 
-  dirties (): Array<[any] | [any, string, any]> {
-    const queries: Array<[any] | [any, string, any]> = [
-
-      [FindArticles]
-
-    ]
+  dirties(): Array<[any] | [any, string, any]> {
+    const queries: Array<[any] | [any, string, any]> = [[FindArticles]]
 
     if (this.inputs?.article != null) {
-      queries.push([
-        FindArticle,
-        'article',
-        this.inputs.article
-      ])
+      queries.push([FindArticle, 'article', this.inputs.article])
     }
 
     return queries

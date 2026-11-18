@@ -1,29 +1,28 @@
-import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
+import { CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 
-import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
+import { UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
-import { type MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
+import { MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
 
-import { type CannotExceed64CharactersError } from '../../../Types/email/errors/CannotExceed64CharactersError'
+import { CannotExceed64CharactersError } from '../../../Types/email/errors/CannotExceed64CharactersError'
 
-import { type CannotHaveMultipleAtSignsError } from '../../../Types/email/errors/CannotHaveMultipleAtSignsError'
+import { CannotHaveMultipleAtSignsError } from '../../../Types/email/errors/CannotHaveMultipleAtSignsError'
 
-import { type DomainCannotStartWithOrEndWithAHyphenError } from '../../../Types/email/errors/DomainCannotStartWithOrEndWithAHyphenError'
+import { DomainCannotStartWithOrEndWithAHyphenError } from '../../../Types/email/errors/DomainCannotStartWithOrEndWithAHyphenError'
 
-import { type FirstPartCannotBeEmptyError } from '../../../Types/email/errors/FirstPartCannotBeEmptyError'
+import { FirstPartCannotBeEmptyError } from '../../../Types/email/errors/FirstPartCannotBeEmptyError'
 
-import { type FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError } from '../../../Types/email/errors/FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError'
+import { FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError } from '../../../Types/email/errors/FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError'
 
-import { type FirstPartHasBadCharactersError } from '../../../Types/email/errors/FirstPartHasBadCharactersError'
+import { FirstPartHasBadCharactersError } from '../../../Types/email/errors/FirstPartHasBadCharactersError'
 
-import { type MustHaveAnAtSignError } from '../../../Types/email/errors/MustHaveAnAtSignError'
+import { MustHaveAnAtSignError } from '../../../Types/email/errors/MustHaveAnAtSignError'
 
-import { type SecondPartCannotBeEmptyError } from '../../../Types/email/errors/SecondPartCannotBeEmptyError'
+import { SecondPartCannotBeEmptyError } from '../../../Types/email/errors/SecondPartCannotBeEmptyError'
 
-import { type SecondPartHasBadCharactersError } from '../../../Types/email/errors/SecondPartHasBadCharactersError'
+import { SecondPartHasBadCharactersError } from '../../../Types/email/errors/SecondPartHasBadCharactersError'
 
 export interface PossibleErrors {
-
   'data.cannot_cast': CannotCastError
 
   'data.email.cannot_cast': CannotCastError
@@ -59,18 +58,18 @@ export interface PossibleErrors {
   'data.username.cannot_cast': CannotCastError
 
   'data.username.missing_required_attribute': MissingRequiredAttributeError
-
 }
 
-export type Error = CannotExceed64CharactersError |
-CannotHaveMultipleAtSignsError |
-DomainCannotStartWithOrEndWithAHyphenError |
-FirstPartCannotBeEmptyError |
-FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError |
-FirstPartHasBadCharactersError |
-CannotCastError |
-MissingRequiredAttributeError |
-MustHaveAnAtSignError |
-SecondPartCannotBeEmptyError |
-SecondPartHasBadCharactersError |
-UnexpectedAttributesError
+export type Error =
+  | CannotExceed64CharactersError
+  | CannotHaveMultipleAtSignsError
+  | DomainCannotStartWithOrEndWithAHyphenError
+  | FirstPartCannotBeEmptyError
+  | FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError
+  | FirstPartHasBadCharactersError
+  | CannotCastError
+  | MissingRequiredAttributeError
+  | MustHaveAnAtSignError
+  | SecondPartCannotBeEmptyError
+  | SecondPartHasBadCharactersError
+  | UnexpectedAttributesError

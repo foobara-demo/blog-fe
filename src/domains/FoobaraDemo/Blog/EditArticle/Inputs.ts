@@ -1,4 +1,4 @@
-interface Inputs {
+type Inputs = {
   article: number
   title?: string | null
   body?: string | null

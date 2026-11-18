@@ -1,4 +1,4 @@
-interface Inputs {
+type Inputs = {
   username_or_email?: string | null
   plaintext_password: string
 }

@@ -1,6 +1,6 @@
 import { Entity } from '../../../../base/Entity'
 
-import { type Role } from '../../../../Foobara/Auth/Types/Role/Ambiguous'
+import { Role } from '../../../../Foobara/Auth/Types/Role/Ambiguous'
 
 export type UserPrimaryKeyType = number
 export const userPrimaryKeyAttributeName: 'id' = 'id'
@@ -11,29 +11,32 @@ export interface UserAttributesType {
   roles: Role[]
 }
 
-export class User<
-  AttributesType extends UserAttributesType = UserAttributesType
-> extends Entity<UserPrimaryKeyType, AttributesType> {
+export class User<AttributesType extends UserAttributesType = UserAttributesType> extends Entity<
+  UserPrimaryKeyType,
+  AttributesType
+> {
   static readonly modelName: string = 'User'
   static readonly entityName: string = 'User'
   static readonly primaryKeyAttributeName: 'id' = 'id'
 
-  get id (): UserPrimaryKeyType {
+  get id(): UserPrimaryKeyType {
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return [['roles', '#']] }
+  get associationPropertyPaths(): string[][] {
+    return [['roles', '#']]
+  }
   readonly hasAssociations: true = true
 
-  get username (): AttributesType['username'] {
+  get username(): AttributesType['username'] {
     return this.readAttribute('username')
   }
 
-  get email (): AttributesType['email'] {
+  get email(): AttributesType['email'] {
     return this.readAttribute('email')
   }
 
-  get roles (): AttributesType['roles'] {
+  get roles(): AttributesType['roles'] {
     return this.readAttribute('roles')
   }
 }

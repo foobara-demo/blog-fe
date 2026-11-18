@@ -2,7 +2,7 @@ export abstract class Model<AttributesType> {
   static readonly modelName: string
   readonly _attributes: AttributesType
 
-  constructor (attributes: AttributesType) {
+  constructor(attributes: AttributesType) {
     this._attributes = attributes
   }
 
@@ -12,7 +12,7 @@ export abstract class Model<AttributesType> {
   }
   */
 
-  get attributes (): AttributesType {
+  get attributes(): AttributesType {
     return this._attributes
   }
 
@@ -20,7 +20,7 @@ export abstract class Model<AttributesType> {
     return (this.attributes as unknown as this['_attributes'])[attributeName]
   }
 
-  toJSON (): unknown {
+  toJSON(): unknown {
     return this._attributes
   }
 }

@@ -10,23 +10,23 @@ export interface ApiKeySummaryAttributesType {
 }
 
 export class ApiKeySummary<
-  AttributesType extends ApiKeySummaryAttributesType = ApiKeySummaryAttributesType
+  AttributesType extends ApiKeySummaryAttributesType = ApiKeySummaryAttributesType,
 > extends FoobaraModel<AttributesType> {
   static readonly modelName: string = 'ApiKeySummary'
 
-  get token_id (): AttributesType['token_id'] {
+  get token_id(): AttributesType['token_id'] {
     return this.readAttribute('token_id')
   }
 
-  get state (): AttributesType['state'] {
+  get state(): AttributesType['state'] {
     return this.readAttribute('state')
   }
 
-  get expires_at (): AttributesType['expires_at'] {
+  get expires_at(): AttributesType['expires_at'] {
     return this.readAttribute('expires_at')
   }
 
-  get created_at (): AttributesType['created_at'] {
+  get created_at(): AttributesType['created_at'] {
     return this.readAttribute('created_at')
   }
 }

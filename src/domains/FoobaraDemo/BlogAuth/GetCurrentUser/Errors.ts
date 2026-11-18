@@ -1,13 +1,12 @@
-import { type UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
+import { UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
 
-import { type NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
+import { NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
 
-import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
+import { CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 
-import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
+import { UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
 export interface PossibleErrors {
-
   'data.cannot_cast': CannotCastError
 
   'data.unexpected_attributes': UnexpectedAttributesError
@@ -15,10 +14,6 @@ export interface PossibleErrors {
   'data.user.not_found': NotFoundError
 
   'runtime.unauthenticated': UnauthenticatedError
-
 }
 
-export type Error = UnauthenticatedError |
-NotFoundError |
-CannotCastError |
-UnexpectedAttributesError
+export type Error = UnauthenticatedError | NotFoundError | CannotCastError | UnexpectedAttributesError

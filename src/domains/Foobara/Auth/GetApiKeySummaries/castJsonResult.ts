@@ -2,7 +2,7 @@ import type Result from './Result'
 
 import { ApiKeySummary } from '../../../Foobara/Auth/Types/ApiKeySummary/ApiKeySummary'
 
-export default function castJsonResult (json: any): Result {
+export default function castJsonResult(json: any): Result {
   json?.forEach((element: any, index: number, array: any[]) => {
     if (element?.expires_at !== undefined) {
       element.expires_at = new Date(element.expires_at)

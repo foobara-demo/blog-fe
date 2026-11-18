@@ -11,7 +11,7 @@ export class GetApiKeySummaries extends RequiresAuthCommand<Inputs, Result, Erro
   static readonly domainName = 'Auth'
   static readonly commandName = 'GetApiKeySummaries'
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 }

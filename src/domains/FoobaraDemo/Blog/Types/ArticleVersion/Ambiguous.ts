@@ -11,32 +11,34 @@ export interface ArticleVersionAttributesType {
 }
 
 export class ArticleVersion<
-  AttributesType extends ArticleVersionAttributesType = ArticleVersionAttributesType
+  AttributesType extends ArticleVersionAttributesType = ArticleVersionAttributesType,
 > extends Entity<ArticleVersionPrimaryKeyType, AttributesType> {
   static readonly modelName: string = 'ArticleVersion'
   static readonly entityName: string = 'ArticleVersion'
   static readonly primaryKeyAttributeName: 'id' = 'id'
 
-  get id (): ArticleVersionPrimaryKeyType {
+  get id(): ArticleVersionPrimaryKeyType {
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return [] }
+  get associationPropertyPaths(): string[][] {
+    return []
+  }
   readonly hasAssociations: false = false
 
-  get title (): AttributesType['title'] {
+  get title(): AttributesType['title'] {
     return this.readAttribute('title')
   }
 
-  get body (): AttributesType['body'] {
+  get body(): AttributesType['body'] {
     return this.readAttribute('body')
   }
 
-  get created_at (): AttributesType['created_at'] {
+  get created_at(): AttributesType['created_at'] {
     return this.readAttribute('created_at')
   }
 
-  get modified_at (): AttributesType['modified_at'] {
+  get modified_at(): AttributesType['modified_at'] {
     return this.readAttribute('modified_at')
   }
 }

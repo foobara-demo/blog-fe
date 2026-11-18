@@ -4,5 +4,4 @@ import { RuntimeError } from '../../../../base/Error'
 
 export class InactiveTokenError extends RuntimeError<{
   state: token_state
-}> {
-}
+}> {}

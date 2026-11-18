@@ -8,7 +8,7 @@ import { LoadedUser } from '../../../FoobaraDemo/Blog/Types/User/Loaded'
 
 import { UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Aggregate'
 
-export default function castJsonResult (json: any): Result {
+export default function castJsonResult(json: any): Result {
   if (json?.blog_user !== undefined) {
     json.blog_user = new LoadedUser(json.blog_user)
   }

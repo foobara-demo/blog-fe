@@ -5921,8 +5921,8 @@
     }
   },
   "metadata": {
-    "when": "2026-10-21 13:21:27 -0700",
-    "foobara_version": "0.7.5",
+    "when": "2026-11-19 18:04:26 -0800",
+    "foobara_version": "0.8.0",
     "url": "http://localhost:9292/manifest"
   }
 }

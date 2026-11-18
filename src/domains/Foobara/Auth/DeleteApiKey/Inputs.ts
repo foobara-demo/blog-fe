@@ -1,4 +1,4 @@
-interface Inputs {
+type Inputs = {
   token: string
 }
 

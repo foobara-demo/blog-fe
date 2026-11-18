@@ -1,4 +1,4 @@
-interface Inputs {
+type Inputs = {
   article: number
   aggregate?: boolean
   load_paths?: any

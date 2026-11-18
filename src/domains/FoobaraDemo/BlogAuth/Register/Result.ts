@@ -1,4 +1,4 @@
-import { type UserAtom } from '../../../FoobaraDemo/BlogAuth/Types/User/Atom'
+import { UserAtom } from '../../../FoobaraDemo/BlogAuth/Types/User/Atom'
 
 type Result = UserAtom
 

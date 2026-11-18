@@ -1,15 +1,14 @@
-import { type ExpiredTokenError } from '../../../Foobara/Auth/errors/VerifyToken/ExpiredTokenError'
+import { ExpiredTokenError } from '../../../Foobara/Auth/errors/VerifyToken/ExpiredTokenError'
 
-import { type InactiveTokenError } from '../../../Foobara/Auth/errors/VerifyToken/InactiveTokenError'
+import { InactiveTokenError } from '../../../Foobara/Auth/errors/VerifyToken/InactiveTokenError'
 
-import { type TokenDoesNotExistError } from '../../../Foobara/Auth/errors/VerifyToken/TokenDoesNotExistError'
+import { TokenDoesNotExistError } from '../../../Foobara/Auth/errors/VerifyToken/TokenDoesNotExistError'
 
-import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
+import { CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 
-import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
+import { UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
 export interface PossibleErrors {
-
   'data.cannot_cast': CannotCastError
 
   'data.unexpected_attributes': UnexpectedAttributesError
@@ -19,11 +18,7 @@ export interface PossibleErrors {
   'foobara::auth::verify_token>runtime.inactive_token': InactiveTokenError
 
   'foobara::auth::verify_token>runtime.token_does_not_exist': TokenDoesNotExistError
-
 }
 
-export type Error = CannotCastError |
-UnexpectedAttributesError |
-ExpiredTokenError |
-InactiveTokenError |
-TokenDoesNotExistError
+export type Error =
+  CannotCastError | UnexpectedAttributesError | ExpiredTokenError | InactiveTokenError | TokenDoesNotExistError

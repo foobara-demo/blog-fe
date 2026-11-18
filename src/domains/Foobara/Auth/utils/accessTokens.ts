@@ -3,7 +3,7 @@ import type RemoteCommand from '../../../base/RemoteCommand'
 import { forEachQuery } from '../../../base/QueryCache'
 
 // TODO: Why is this in here? It seems general-purpose not auth-specific
-function dirtyAllQueries () {
+function dirtyAllQueries() {
   forEachQuery((query: Query<RemoteCommand<any, any, any>>) => {
     query.setDirty()
   })
@@ -57,8 +57,4 @@ if (typeof BroadcastChannel !== 'undefined') {
   }
 }
 
-export {
-  handleLogin,
-  handleLogout,
-  tokenForUrl
-}
+export { handleLogin, handleLogout, tokenForUrl }

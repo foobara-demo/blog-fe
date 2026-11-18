@@ -13,16 +13,12 @@ export class Register extends RemoteCommand<Inputs, Result, Error> {
   static readonly domainName = 'BlogAuth'
   static readonly commandName = 'Register'
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 
-  dirties (): Array<[any] | [any, string, any]> {
-    const queries: Array<[any] | [any, string, any]> = [
-
-      [GetCurrentUser]
-
-    ]
+  dirties(): Array<[any] | [any, string, any]> {
+    const queries: Array<[any] | [any, string, any]> = [[GetCurrentUser]]
 
     return queries
   }

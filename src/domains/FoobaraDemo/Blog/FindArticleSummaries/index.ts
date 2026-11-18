@@ -11,7 +11,7 @@ export class FindArticleSummaries extends RequiresAuthCommand<Inputs, Result, Er
   static readonly domainName = 'Blog'
   static readonly commandName = 'FindArticleSummaries'
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 }

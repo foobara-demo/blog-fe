@@ -11,7 +11,7 @@ export class GetCurrentUser extends RequiresAuthCommand<Inputs, Result, Error> {
   static readonly domainName = 'BlogAuth'
   static readonly commandName = 'GetCurrentUser'
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 }

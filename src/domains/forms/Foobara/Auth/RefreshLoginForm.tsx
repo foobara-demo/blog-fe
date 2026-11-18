@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -7,13 +7,15 @@ import { RefreshLogin } from '../../../Foobara/Auth/RefreshLogin'
 import type RefreshLoginResult from '../../../Foobara/Auth/RefreshLogin/Result'
 import { type Error as RefreshLoginError } from '../../../Foobara/Auth/RefreshLogin/Errors'
 
-export default function RefreshLoginForm (): JSX.Element {
+export default function RefreshLoginForm(): JSX.Element {
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -41,12 +43,11 @@ export default function RefreshLoginForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <button onClick={run}>Refresh login</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

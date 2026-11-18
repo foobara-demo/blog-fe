@@ -3,9 +3,12 @@ import { type FoobaraError } from '../../base/Error'
 import { type Outcome } from '../../base/Outcome'
 import { handleLogin } from './utils/accessTokens'
 
-export default class LoginCommand<Inputs, Result, Error extends FoobaraError<any>>
-  extends RemoteCommand<Inputs, Result, Error> {
-  async _handleResponse (response: Response): Promise<Outcome<Result, Error>> {
+export default class LoginCommand<Inputs, Result, Error extends FoobaraError<any>> extends RemoteCommand<
+  Inputs,
+  Result,
+  Error
+> {
+  async _handleResponse(response: Response): Promise<Outcome<Result, Error>> {
     if (response.ok) {
       const accessToken: string | null = response.headers.get('x-access-token')
 

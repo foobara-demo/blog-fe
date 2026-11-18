@@ -1,4 +1,4 @@
-import { type UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Aggregate'
+import { UserAggregate } from '../../../FoobaraDemo/BlogAuth/Types/User/Aggregate'
 
 type Result = UserAggregate
 

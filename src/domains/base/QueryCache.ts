@@ -4,15 +4,15 @@ import { type InputsOf, type RemoteCommandConstructor } from '../base/RemoteComm
 
 const queryCache = new Map<string, Query<RemoteCommand<any, any, any>>>()
 
-export function getQuery<CommandT extends RemoteCommand<any, any, any>> (
+export function getQuery<CommandT extends RemoteCommand<any, any, any>>(
   CommandClass: RemoteCommandConstructor<CommandT>,
-  inputs: InputsOf<CommandT> | undefined = undefined
+  inputs: InputsOf<CommandT> | undefined = undefined,
 ): Query<CommandT> {
   const key: string = toKey(CommandClass, inputs)
   const hit = queryCache.get(key)
 
   if (hit != null) {
-    return (hit as unknown as Query<CommandT>)
+    return hit as unknown as Query<CommandT>
   }
 
   let query: Query<CommandT>
@@ -34,7 +34,7 @@ export function getQuery<CommandT extends RemoteCommand<any, any, any>> (
   return query
 }
 
-export function forEachQuery (callback: (query: Query<RemoteCommand<any, any, any>>) => void): void {
+export function forEachQuery(callback: (query: Query<RemoteCommand<any, any, any>>) => void): void {
   queryCache.forEach(callback)
 }
 
@@ -56,11 +56,12 @@ if (typeof BroadcastChannel !== 'undefined') {
   })
 }
 
-export function dirtyQuery<CommandT extends RemoteCommand<any, any, any>> (
+export function dirtyQuery<CommandT extends RemoteCommand<any, any, any>>(
   commandClass: RemoteCommandConstructor<CommandT> | string,
   propertyName: string | undefined = undefined,
   propertyValue: string | number | undefined = undefined,
-  options: { skipBroadcast: boolean } = { skipBroadcast: false }) {
+  options: { skipBroadcast: boolean } = { skipBroadcast: false },
+) {
   if (typeof commandClass !== 'string') {
     commandClass = commandClass.fullCommandName
   }
@@ -86,9 +87,9 @@ export function dirtyQuery<CommandT extends RemoteCommand<any, any, any>> (
   }
 }
 
-function toKey<CommandT extends RemoteCommand<any, any, any>> (
+function toKey<CommandT extends RemoteCommand<any, any, any>>(
   CommandClass: RemoteCommandConstructor<CommandT>,
-  inputs: InputsOf<CommandT> | undefined
+  inputs: InputsOf<CommandT> | undefined,
 ): string {
   let key: string = CommandClass.fullCommandName
 

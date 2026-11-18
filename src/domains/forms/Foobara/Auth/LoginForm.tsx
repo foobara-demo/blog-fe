@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -9,7 +9,7 @@ import type LoginInputs from '../../../Foobara/Auth/Login/Inputs'
 import type LoginResult from '../../../Foobara/Auth/Login/Result'
 import { type Error as LoginError } from '../../../Foobara/Auth/Login/Errors'
 
-export default function LoginForm (): JSX.Element {
+export default function LoginForm(): JSX.Element {
   const [usernameOrEmail, setUsernameOrEmail] = useState<string | null | undefined>(undefined)
 
   const [plaintextPassword, setPlaintextPassword] = useState<string | undefined>(undefined)
@@ -17,9 +17,11 @@ export default function LoginForm (): JSX.Element {
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -36,7 +38,7 @@ export default function LoginForm (): JSX.Element {
 
     const inputs: LoginInputs = {
       username_or_email: usernameOrEmail,
-      plaintext_password: plaintextPassword
+      plaintext_password: plaintextPassword,
     }
 
     const command = new Login(inputs)
@@ -62,26 +64,28 @@ export default function LoginForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <input
-
           value={usernameOrEmail ?? ''}
-          onChange={(e) => { setUsernameOrEmail(e.target.value as string | null) }}
+          onChange={(e) => {
+            setUsernameOrEmail(e.target.value as string | null)
+          }}
           placeholder="username or email"
-                  />
+        />
 
         <input
           type="password"
           value={plaintextPassword ?? ''}
-          onChange={(e) => { setPlaintextPassword(e.target.value) }}
+          onChange={(e) => {
+            setPlaintextPassword(e.target.value)
+          }}
           placeholder="plaintext password"
-                  />
+        />
 
         <button onClick={run}>Login</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

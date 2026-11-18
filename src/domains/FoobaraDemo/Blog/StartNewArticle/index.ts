@@ -15,23 +15,15 @@ export class StartNewArticle extends RequiresAuthCommand<Inputs, Result, Error> 
   static readonly domainName = 'Blog'
   static readonly commandName = 'StartNewArticle'
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return castJsonResult(json)
   }
 
-  dirties (): Array<[any] | [any, string, any]> {
-    const queries: Array<[any] | [any, string, any]> = [
-
-      [FindArticles]
-
-    ]
+  dirties(): Array<[any] | [any, string, any]> {
+    const queries: Array<[any] | [any, string, any]> = [[FindArticles]]
 
     if (this.outcome?.result?.id != null) {
-      queries.push([
-        FindArticle,
-        'article',
-        this.outcome.result.id
-      ])
+      queries.push([FindArticle, 'article', this.outcome.result.id])
     }
 
     return queries

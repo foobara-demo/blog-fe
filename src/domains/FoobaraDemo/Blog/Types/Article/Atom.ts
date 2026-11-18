@@ -1,11 +1,9 @@
-import {
-  type ArticleAttributesType
-} from './Ambiguous'
+import { type ArticleAttributesType } from './Ambiguous'
 import { LoadedArticle } from './Loaded'
 
-import { type UnloadedArticleVersion } from '../../../../FoobaraDemo/Blog/Types/ArticleVersion/Unloaded'
+import { UnloadedArticleVersion } from '../../../../FoobaraDemo/Blog/Types/ArticleVersion/Unloaded'
 
-import { type UnloadedUser } from '../../../../FoobaraDemo/Blog/Types/User/Unloaded'
+import { UnloadedUser } from '../../../../FoobaraDemo/Blog/Types/User/Unloaded'
 
 export interface ArticleAtomAttributesType extends ArticleAttributesType {
   id: number
@@ -25,7 +23,11 @@ export interface ArticleAtomAttributesType extends ArticleAttributesType {
 
 export class ArticleAtom extends LoadedArticle<ArticleAtomAttributesType> {
   /* eslint-disable @typescript-eslint/class-literal-property-style */
-  get isAtom (): true { return true }
-  get isAggregate (): false { return false }
+  get isAtom(): true {
+    return true
+  }
+  get isAggregate(): false {
+    return false
+  }
   /* eslint-enable @typescript-eslint/class-literal-property-style */
 }

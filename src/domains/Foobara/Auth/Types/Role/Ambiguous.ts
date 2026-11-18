@@ -7,21 +7,24 @@ export interface RoleAttributesType {
   symbol: string
 }
 
-export class Role<
-  AttributesType extends RoleAttributesType = RoleAttributesType
-> extends Entity<RolePrimaryKeyType, AttributesType> {
+export class Role<AttributesType extends RoleAttributesType = RoleAttributesType> extends Entity<
+  RolePrimaryKeyType,
+  AttributesType
+> {
   static readonly modelName: string = 'Role'
   static readonly entityName: string = 'Role'
   static readonly primaryKeyAttributeName: 'id' = 'id'
 
-  get id (): RolePrimaryKeyType {
+  get id(): RolePrimaryKeyType {
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return [] }
+  get associationPropertyPaths(): string[][] {
+    return []
+  }
   readonly hasAssociations: false = false
 
-  get symbol (): AttributesType['symbol'] {
+  get symbol(): AttributesType['symbol'] {
     return this.readAttribute('symbol')
   }
 }

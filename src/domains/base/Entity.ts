@@ -6,18 +6,20 @@ export type Never<T> = { [P in keyof T]: never }
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export type EntityPrimaryKeyType = number | string
 
-export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, AttributesType>
-  extends Model<AttributesType> {
+export abstract class Entity<
+  PrimaryKeyType extends EntityPrimaryKeyType,
+  AttributesType,
+> extends Model<AttributesType> {
   static readonly entityName: string
   static readonly primaryKeyAttributeName: string
 
   readonly primaryKey: PrimaryKeyType
   readonly isLoaded: boolean
 
-  abstract get hasAssociations (): boolean
-  abstract get associationPropertyPaths (): string[][]
+  abstract get hasAssociations(): boolean
+  abstract get associationPropertyPaths(): string[][]
 
-  constructor (primaryKeyOrAttributes: PrimaryKeyType | AttributesType) {
+  constructor(primaryKeyOrAttributes: PrimaryKeyType | AttributesType) {
     let attributes: AttributesType | undefined
 
     const klass = new.target as typeof Entity<PrimaryKeyType, AttributesType>
@@ -40,11 +42,14 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     return this.constructor as EntityConstructor<PrimaryKeyType, AttributesType>;
   }
   */
-  entitiesAt (path: string[]): Array<Entity<EntityPrimaryKeyType, Record<string, any>>> {
-    return valuesAt(this, path).filter(item => item !== undefined) as Array<Entity<EntityPrimaryKeyType, Record<string, any>>>
+  entitiesAt(path: string[]): Entity<EntityPrimaryKeyType, Record<string, any>>[] {
+    return valuesAt(this, path).filter((item) => item !== undefined) as Entity<
+      EntityPrimaryKeyType,
+      Record<string, any>
+    >[]
   }
 
-  get isAtom (): boolean {
+  get isAtom(): boolean {
     if (!this.isLoaded) {
       throw new Error("Record is not loaded so can't check if it's an atom")
     }
@@ -64,7 +69,7 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
     return true
   }
 
-  get isAggregate (): boolean {
+  get isAggregate(): boolean {
     if (!this.isLoaded) {
       throw new Error("Record is not loaded so can't check if it's an aggregate")
     }
@@ -87,18 +92,15 @@ export abstract class Entity<PrimaryKeyType extends EntityPrimaryKeyType, Attrib
 
     return true
   }
-
-  get attributes (): AttributesType {
+  get attributes(): AttributesType {
     if (!this.isLoaded) {
-      throw new Error(
-        `Cannot read attributes because :${this.primaryKey} is not a loaded record`
-      )
+      throw new Error(`Cannot read attributes because :${this.primaryKey} is not a loaded record`)
     }
 
     return this._attributes
   }
 
-  override toJSON (): unknown {
+  override toJSON(): unknown {
     return this.primaryKey
   }
 }

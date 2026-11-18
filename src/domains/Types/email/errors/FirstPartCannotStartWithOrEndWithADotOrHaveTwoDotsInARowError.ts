@@ -4,5 +4,4 @@ export class FirstPartCannotStartWithOrEndWithADotOrHaveTwoDotsInARowError exten
   value?: any
   regex?: any
   negate_regex?: any
-}> {
-}
+}> {}

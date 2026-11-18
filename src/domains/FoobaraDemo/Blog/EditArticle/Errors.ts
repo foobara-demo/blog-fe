@@ -1,21 +1,20 @@
-import { type NotAllowedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/NotAllowedError'
+import { NotAllowedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/NotAllowedError'
 
-import { type UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
+import { UnauthenticatedError } from '../../../GlobalDomain/errors/Foobara/CommandConnector/UnauthenticatedError'
 
-import { type NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
+import { NotFoundError } from '../../../GlobalDomain/errors/Foobara/Entity/NotFoundError'
 
-import { type CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
+import { CannotCastError } from '../../../GlobalDomain/errors/Foobara/Value/Processor/Casting/CannotCastError'
 
-import { type NeitherTitleNorBodyProvidedError } from '../../../FoobaraDemo/Blog/EditArticle/errors/NeitherTitleNorBodyProvidedError'
+import { NeitherTitleNorBodyProvidedError } from '../../../FoobaraDemo/Blog/EditArticle/errors/NeitherTitleNorBodyProvidedError'
 
-import { type UnchangedError } from '../../../FoobaraDemo/Blog/EditArticle/errors/UnchangedError'
+import { UnchangedError } from '../../../FoobaraDemo/Blog/EditArticle/errors/UnchangedError'
 
-import { type UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
+import { UnexpectedAttributesError } from '../../../Types/attributes/errors/UnexpectedAttributesError'
 
-import { type MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
+import { MissingRequiredAttributeError } from '../../../Types/attributes/errors/MissingRequiredAttributeError'
 
 export interface PossibleErrors {
-
   'data.article.cannot_cast': CannotCastError
 
   'data.article.missing_required_attribute': MissingRequiredAttributeError
@@ -39,14 +38,14 @@ export interface PossibleErrors {
   'runtime.unauthenticated': UnauthenticatedError
 
   'runtime.unchanged': UnchangedError
-
 }
 
-export type Error = NotAllowedError |
-UnauthenticatedError |
-NotFoundError |
-CannotCastError |
-MissingRequiredAttributeError |
-NeitherTitleNorBodyProvidedError |
-UnchangedError |
-UnexpectedAttributesError
+export type Error =
+  | NotAllowedError
+  | UnauthenticatedError
+  | NotFoundError
+  | CannotCastError
+  | MissingRequiredAttributeError
+  | NeitherTitleNorBodyProvidedError
+  | UnchangedError
+  | UnexpectedAttributesError

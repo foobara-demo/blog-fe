@@ -6,7 +6,7 @@ import { LoadedArticleVersion } from '../../../FoobaraDemo/Blog/Types/ArticleVer
 
 import { LoadedUser } from '../../../FoobaraDemo/Blog/Types/User/Loaded'
 
-export default function castJsonResult (json: any): Result {
+export default function castJsonResult(json: any): Result {
   if (json?.author !== undefined) {
     json.author = new LoadedUser(json.author)
   }

@@ -1,9 +1,6 @@
-import {
-  ArticleSummary,
-  type ArticleSummaryAttributesType
-} from './ArticleSummary'
+import { ArticleSummary, type ArticleSummaryAttributesType } from './ArticleSummary'
 
-import { type UnloadedUser } from '../../../../FoobaraDemo/Blog/Types/User/Unloaded'
+import { UnloadedUser } from '../../../../FoobaraDemo/Blog/Types/User/Unloaded'
 
 export interface ArticleSummaryAtomAttributesType extends ArticleSummaryAttributesType {
   article_id: number
@@ -16,5 +13,4 @@ export interface ArticleSummaryAtomAttributesType extends ArticleSummaryAttribut
   last_edited_at?: Date
 }
 
-export class ArticleSummaryAtom extends ArticleSummary<ArticleSummaryAtomAttributesType> {
-}
+export class ArticleSummaryAtom extends ArticleSummary<ArticleSummaryAtomAttributesType> {}

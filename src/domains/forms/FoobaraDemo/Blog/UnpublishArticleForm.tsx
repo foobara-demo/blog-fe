@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -9,15 +9,17 @@ import type UnpublishArticleInputs from '../../../FoobaraDemo/Blog/UnpublishArti
 import type UnpublishArticleResult from '../../../FoobaraDemo/Blog/UnpublishArticle/Result'
 import { type Error as UnpublishArticleError } from '../../../FoobaraDemo/Blog/UnpublishArticle/Errors'
 
-export default function UnpublishArticleForm (): JSX.Element {
+export default function UnpublishArticleForm(): JSX.Element {
   const [article, setArticle] = useState<number | undefined>(undefined)
 
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -28,7 +30,7 @@ export default function UnpublishArticleForm (): JSX.Element {
     }
 
     const inputs: UnpublishArticleInputs = {
-      article
+      article,
     }
 
     const command = new UnpublishArticle(inputs)
@@ -54,19 +56,19 @@ export default function UnpublishArticleForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <input
-
           value={article ?? ''}
-          onChange={(e) => { setArticle(parseInt(e.target.value)) }}
+          onChange={(e) => {
+            setArticle(parseInt(e.target.value))
+          }}
           placeholder="article"
-                  />
+        />
 
         <button onClick={run}>Unpublish article</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

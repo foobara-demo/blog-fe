@@ -1,4 +1,4 @@
-interface Inputs {
+type Inputs = {
   author?: number
   title: string
 }

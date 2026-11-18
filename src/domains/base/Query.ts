@@ -1,8 +1,6 @@
 import type RemoteCommand from '../base/RemoteCommand'
 import { type Outcome } from '../base/Outcome'
-import {
-  type InputsOf, type ResultOf, type ErrorOf, type RemoteCommandConstructor
-} from './RemoteCommandTypes'
+import { type InputsOf, type ResultOf, type ErrorOf, type RemoteCommandConstructor } from './RemoteCommandTypes'
 
 export default class Query<CommandT extends RemoteCommand<any, any, any>> {
   inputs: InputsOf<CommandT>
@@ -16,27 +14,24 @@ export default class Query<CommandT extends RemoteCommand<any, any, any>> {
   inputsChangedListeners: Array<() => void> = []
   failure: any
 
-  constructor (
-    CommandClass: RemoteCommandConstructor<CommandT>,
-    inputs: InputsOf<CommandT> | undefined = undefined
-  ) {
+  constructor(CommandClass: RemoteCommandConstructor<CommandT>, inputs: InputsOf<CommandT> | undefined = undefined) {
     this.CommandClass = CommandClass
     this.inputs = inputs ?? (undefined as unknown as InputsOf<CommandT>)
   }
 
-  get outcome (): null | Outcome<ResultOf<CommandT>, ErrorOf<CommandT>> {
+  get outcome(): null | Outcome<ResultOf<CommandT>, ErrorOf<CommandT>> {
     return this.command?.outcome ?? null
   }
 
-  get result (): null | ResultOf<CommandT> {
+  get result(): null | ResultOf<CommandT> {
     return this.command?.outcome?.result ?? null
   }
 
-  get errors (): null | Array<ErrorOf<CommandT>> {
+  get errors(): null | Array<ErrorOf<CommandT>> {
     return this.command?.outcome?.errors ?? null
   }
 
-  onChange (callback: () => void): () => void {
+  onChange(callback: () => void): () => void {
     this.listeners.push(callback)
     return () => {
       const index = this.listeners.indexOf(callback)
@@ -46,7 +41,7 @@ export default class Query<CommandT extends RemoteCommand<any, any, any>> {
     }
   }
 
-  onInputsChange (callback: () => void): () => void {
+  onInputsChange(callback: () => void): () => void {
     this.inputsChangedListeners.push(callback)
 
     return () => {
@@ -57,41 +52,45 @@ export default class Query<CommandT extends RemoteCommand<any, any, any>> {
     }
   }
 
-  fireChange (): void {
-    this.listeners.forEach(listener => { listener() })
+  fireChange(): void {
+    this.listeners.forEach((listener) => {
+      listener()
+    })
   }
 
-  fireInputsChanged (): void {
-    this.inputsChangedListeners.forEach(listener => { listener() })
+  fireInputsChanged(): void {
+    this.inputsChangedListeners.forEach((listener) => {
+      listener()
+    })
   }
 
-  setInputs (inputs: InputsOf<CommandT>): void {
+  setInputs(inputs: InputsOf<CommandT>): void {
     this.inputs = inputs
     this.fireInputsChanged()
     this.setDirty()
   }
 
-  setDirty (): void {
+  setDirty(): void {
     this.isDirty = true
     this.run()
   }
 
-  get isSuccess (): boolean {
+  get isSuccess(): boolean {
     return !this.isFailure && (this.command?.outcome?.isSuccess() ?? false)
   }
 
-  get isError (): boolean {
+  get isError(): boolean {
     if (this.command?.outcome == null) {
       return false
     }
     return !this.command.outcome.isSuccess()
   }
 
-  get isPending (): boolean {
+  get isPending(): boolean {
     return !this.isLoading || !this.isFailure || this.command == null
   }
 
-  async run (): Promise<void> {
+  async run(): Promise<void> {
     if (this.isLoading) {
       this.ranWhileRunning = true
       this.fireChange()

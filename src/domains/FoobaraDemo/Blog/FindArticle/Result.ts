@@ -1,4 +1,4 @@
-import { type ArticleAggregate } from '../../../FoobaraDemo/Blog/Types/Article/Aggregate'
+import { ArticleAggregate } from '../../../FoobaraDemo/Blog/Types/Article/Aggregate'
 
 type Result = ArticleAggregate
 

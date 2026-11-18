@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -9,7 +9,7 @@ import type RegisterInputs from '../../../FoobaraDemo/BlogAuth/Register/Inputs'
 import type RegisterResult from '../../../FoobaraDemo/BlogAuth/Register/Result'
 import { type Error as RegisterError } from '../../../FoobaraDemo/BlogAuth/Register/Errors'
 
-export default function RegisterForm (): JSX.Element {
+export default function RegisterForm(): JSX.Element {
   const [username, setUsername] = useState<string | undefined>(undefined)
 
   const [email, setEmail] = useState<string | null | undefined>(undefined)
@@ -21,9 +21,11 @@ export default function RegisterForm (): JSX.Element {
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -52,7 +54,7 @@ export default function RegisterForm (): JSX.Element {
       username,
       email,
       plaintext_password: plaintextPassword,
-      full_name: fullName
+      full_name: fullName,
     }
 
     const command = new Register(inputs)
@@ -78,40 +80,44 @@ export default function RegisterForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <input
-
           value={username ?? ''}
-          onChange={(e) => { setUsername(e.target.value) }}
+          onChange={(e) => {
+            setUsername(e.target.value)
+          }}
           placeholder="username"
-                  />
+        />
 
         <input
-
           value={email ?? ''}
-          onChange={(e) => { setEmail(e.target.value as string | null) }}
+          onChange={(e) => {
+            setEmail(e.target.value as string | null)
+          }}
           placeholder="email"
-                  />
+        />
 
         <input
           type="password"
           value={plaintextPassword ?? ''}
-          onChange={(e) => { setPlaintextPassword(e.target.value as string | null) }}
+          onChange={(e) => {
+            setPlaintextPassword(e.target.value as string | null)
+          }}
           placeholder="plaintext password"
-                  />
+        />
 
         <input
-
           value={fullName ?? ''}
-          onChange={(e) => { setFullName(e.target.value) }}
+          onChange={(e) => {
+            setFullName(e.target.value)
+          }}
           placeholder="full name"
-                  />
+        />
 
         <button onClick={run}>Register</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

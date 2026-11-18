@@ -2,15 +2,10 @@ import {
   ArticleVersion,
   type ArticleVersionPrimaryKeyType,
   articleVersionPrimaryKeyAttributeName,
-  type ArticleVersionAttributesType
+  type ArticleVersionAttributesType,
 } from './ArticleVersion/Ambiguous'
-import {
-  UnloadedArticleVersion,
-  type UnloadedArticleVersionAttributesType
-} from './ArticleVersion/Unloaded'
-import {
-  LoadedArticleVersion
-} from './ArticleVersion/Loaded'
+import { UnloadedArticleVersion, type UnloadedArticleVersionAttributesType } from './ArticleVersion/Unloaded'
+import { LoadedArticleVersion } from './ArticleVersion/Loaded'
 
 export {
   ArticleVersion,
@@ -18,7 +13,6 @@ export {
   UnloadedArticleVersion,
   type UnloadedArticleVersionAttributesType,
   LoadedArticleVersion,
-
   type ArticleVersionPrimaryKeyType,
-  articleVersionPrimaryKeyAttributeName
+  articleVersionPrimaryKeyAttributeName,
 }

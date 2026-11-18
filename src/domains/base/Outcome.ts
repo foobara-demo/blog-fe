@@ -5,7 +5,7 @@ export class Outcome<Result, OutcomeError extends FoobaraError> {
   readonly errors: OutcomeError[] = []
   readonly _isSuccess: boolean
 
-  constructor (result?: Result, errors?: OutcomeError[]) {
+  constructor(result?: Result, errors?: OutcomeError[]) {
     this.result = result
     if (errors != null) {
       this.errors = errors
@@ -13,12 +13,12 @@ export class Outcome<Result, OutcomeError extends FoobaraError> {
     this._isSuccess = errors == null || errors.length === 0
   }
 
-  isSuccess (): this is SuccessfulOutcome<Result, OutcomeError> {
+  isSuccess(): this is SuccessfulOutcome<Result, OutcomeError> {
     return this._isSuccess
   }
 
-  get errorMessage (): string {
-    return this.errors.map(e => e.message).join(', ')
+  get errorMessage(): string {
+    return this.errors.map((e) => e.message).join(', ')
   }
 }
 
@@ -27,7 +27,7 @@ export class SuccessfulOutcome<Result, OutcomeError extends FoobaraError> extend
   readonly errors: OutcomeError[] = []
   readonly result: Result
 
-  constructor (result: Result) {
+  constructor(result: Result) {
     super(result, [])
     this.result = result
   }
@@ -36,7 +36,7 @@ export class SuccessfulOutcome<Result, OutcomeError extends FoobaraError> extend
 export class ErrorOutcome<Result, OutcomeError extends FoobaraError> extends Outcome<Result, OutcomeError> {
   readonly _isSuccess: false = false
 
-  constructor (errors: OutcomeError[]) {
+  constructor(errors: OutcomeError[]) {
     super(undefined, errors)
   }
 }

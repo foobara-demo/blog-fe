@@ -1,11 +1,9 @@
-import {
-  type UserAttributesType
-} from './Ambiguous'
+import { type UserAttributesType } from './Ambiguous'
 import { LoadedUser } from './Loaded'
 
-import type * as Auth from '../../../../Foobara/Auth'
+import * as Auth from '../../../../Foobara/Auth'
 
-import type * as Blog from '../../../../FoobaraDemo/Blog'
+import * as Blog from '../../../../FoobaraDemo/Blog'
 
 export interface UserAtomAttributesType extends UserAttributesType {
   id: number
@@ -19,7 +17,11 @@ export interface UserAtomAttributesType extends UserAttributesType {
 
 export class UserAtom extends LoadedUser<UserAtomAttributesType> {
   /* eslint-disable @typescript-eslint/class-literal-property-style */
-  get isAtom (): true { return true }
-  get isAggregate (): false { return false }
+  get isAtom(): true {
+    return true
+  }
+  get isAggregate(): false {
+    return false
+  }
   /* eslint-enable @typescript-eslint/class-literal-property-style */
 }

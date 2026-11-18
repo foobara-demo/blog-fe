@@ -4,9 +4,12 @@ import { type FoobaraError } from '../../base/Error'
 import { tokenForUrl } from './utils/accessTokens'
 import { RefreshLogin } from './RefreshLogin'
 
-export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraError<any>>
-  extends RemoteCommand<Inputs, Result, Error> {
-  _buildRequestParams (): RequestInit {
+export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraError<any>> extends RemoteCommand<
+  Inputs,
+  Result,
+  Error
+> {
+  _buildRequestParams(): RequestInit {
     const requestParams = super._buildRequestParams()
 
     const bearerToken = tokenForUrl(this.urlBase)
@@ -18,13 +21,13 @@ export default class RequiresAuthCommand<Inputs, Result, Error extends FoobaraEr
     return requestParams
   }
 
-  async _handleResponse (response: Response): Promise<Outcome<Result, Error>> {
+  async _handleResponse(response: Response): Promise<Outcome<Result, Error>> {
     response = await this._handleUnauthenticated(response)
 
     return await super._handleResponse(response)
   }
 
-  async _handleUnauthenticated (response: Response): Promise<Response> {
+  async _handleUnauthenticated(response: Response): Promise<Response> {
     if (response.status === 401) {
       this.commandState = 'refreshing_authentication'
 

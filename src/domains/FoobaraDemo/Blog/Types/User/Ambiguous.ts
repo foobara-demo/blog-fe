@@ -9,29 +9,32 @@ export interface UserAttributesType {
   bio: string
 }
 
-export class User<
-  AttributesType extends UserAttributesType = UserAttributesType
-> extends Entity<UserPrimaryKeyType, AttributesType> {
+export class User<AttributesType extends UserAttributesType = UserAttributesType> extends Entity<
+  UserPrimaryKeyType,
+  AttributesType
+> {
   static readonly modelName: string = 'User'
   static readonly entityName: string = 'User'
   static readonly primaryKeyAttributeName: 'id' = 'id'
 
-  get id (): UserPrimaryKeyType {
+  get id(): UserPrimaryKeyType {
     return this.primaryKey
   }
 
-  get associationPropertyPaths (): string[][] { return [] }
+  get associationPropertyPaths(): string[][] {
+    return []
+  }
   readonly hasAssociations: false = false
 
-  get full_name (): AttributesType['full_name'] {
+  get full_name(): AttributesType['full_name'] {
     return this.readAttribute('full_name')
   }
 
-  get blog_slug (): AttributesType['blog_slug'] {
+  get blog_slug(): AttributesType['blog_slug'] {
     return this.readAttribute('blog_slug')
   }
 
-  get bio (): AttributesType['bio'] {
+  get bio(): AttributesType['bio'] {
     return this.readAttribute('bio')
   }
 }

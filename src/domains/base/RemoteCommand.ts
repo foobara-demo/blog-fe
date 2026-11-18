@@ -10,11 +10,11 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   static domainName: string
 
   // TODO: make use of domain's config instead of import.meta.env directly.
-  static get urlBase (): string {
+  static get urlBase(): string {
     let base = this._urlBase
 
     if (base == null) {
-      base = process.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
+      base = import.meta.env.REACT_APP_FOOBARA_GLOBAL_URL_BASE
     }
 
     if (base == null) {
@@ -24,15 +24,15 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return base
   }
 
-  static set urlBase (urlBase: string) {
+  static set urlBase(urlBase: string) {
     this._urlBase = urlBase
   }
 
-  get organizationName (): string {
+  get organizationName(): string {
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).organizationName
   }
 
-  get domainName (): string {
+  get domainName(): string {
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).domainName
   }
 
@@ -40,21 +40,21 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
   outcome: null | Outcome<Result, CommandError>
   commandState: string
 
-  constructor (inputs: Inputs | undefined = undefined) {
+  constructor(inputs: Inputs | undefined = undefined) {
     this.inputs = inputs
     this.commandState = 'initialized'
     this.outcome = null
   }
 
-  get commandName (): string {
+  get commandName(): string {
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).commandName
   }
 
-  get urlBase (): string {
+  get urlBase(): string {
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).urlBase
   }
 
-  static get fullCommandName (): string {
+  static get fullCommandName(): string {
     const path = []
 
     if (this.organizationName != null && this.organizationName !== 'GlobalOrganization') {
@@ -69,15 +69,15 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return path.join('::')
   }
 
-  get fullCommandName (): string {
+  get fullCommandName(): string {
     return (this.constructor as typeof RemoteCommand<Inputs, Result, CommandError>).fullCommandName
   }
 
-  get commandPath (): string {
+  get commandPath(): string {
     return this.fullCommandName.replaceAll('::', '/')
   }
 
-  async run (): Promise<Outcome<Result, CommandError>> {
+  async run(): Promise<Outcome<Result, CommandError>> {
     this.commandState = 'executing'
     const response = await this._issueRequest()
 
@@ -86,30 +86,32 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return this.outcome
   }
 
-  _buildUrl (): string {
+  _buildUrl(): string {
     return `${this.urlBase}/run/${this.commandPath}`
   }
 
-  _buildRequestParams (): RequestInit {
+  _buildRequestParams(): RequestInit {
     return {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(this.inputs),
-      credentials: 'include'
+      credentials: 'include',
     }
   }
 
-  async _issueRequest (): Promise<Response> {
+  async _issueRequest(): Promise<Response> {
     return await fetch(this._buildUrl(), this._buildRequestParams())
   }
 
-  castJsonResult (json: any): Result {
+  castJsonResult(json: any): Result {
     return json
   }
 
-  dirties (): Array<[any] | [any, string, any]> { return [] }
+  dirties(): Array<[any] | [any, string, any]> {
+    return []
+  }
 
-  async _handleResponse (response: Response): Promise<Outcome<Result, CommandError>> {
+  async _handleResponse(response: Response): Promise<Outcome<Result, CommandError>> {
     const text = await response.text()
     const body = JSON.parse(text)
 
@@ -131,7 +133,7 @@ export default abstract class RemoteCommand<Inputs, Result, CommandError extends
     return this.outcome
   }
 
-  dirtyQueries () {
+  dirtyQueries() {
     for (const [commandClass, inputs] of this.dirties()) {
       if (inputs != null) {
         for (const [propertyName, value] of Object.entries(inputs)) {

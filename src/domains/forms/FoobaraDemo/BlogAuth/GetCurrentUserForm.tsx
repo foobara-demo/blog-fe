@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from 'react'
+import { useState, type JSX } from 'react'
 
 import { type Outcome } from '../../../base/Outcome'
 
@@ -7,13 +7,15 @@ import { GetCurrentUser } from '../../../FoobaraDemo/BlogAuth/GetCurrentUser'
 import type GetCurrentUserResult from '../../../FoobaraDemo/BlogAuth/GetCurrentUser/Result'
 import { type Error as GetCurrentUserError } from '../../../FoobaraDemo/BlogAuth/GetCurrentUser/Errors'
 
-export default function GetCurrentUserForm (): JSX.Element {
+export default function GetCurrentUserForm(): JSX.Element {
   const [result, setResult] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  function toVoid (fn: () => Promise<void>): () => void {
+  function toVoid(fn: () => Promise<void>): () => void {
     return (): void => {
-      void (async (): Promise<void> => { await fn() })()
+      void (async (): Promise<void> => {
+        await fn()
+      })()
     }
   }
 
@@ -41,12 +43,11 @@ export default function GetCurrentUserForm (): JSX.Element {
   return (
     <div className="CommandForm">
       <div>
-
         <button onClick={run}>Get current user</button>
       </div>
 
-      {(result != null) && <p>{result}</p>}
-      {(error != null) && <p className="error-message">{error}</p>}
+      {result != null && <p>{result}</p>}
+      {error != null && <p className="error-message">{error}</p>}
     </div>
   )
 }

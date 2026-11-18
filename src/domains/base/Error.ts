@@ -10,8 +10,19 @@ export abstract class FoobaraError<contextT = any> {
   readonly message: string
   readonly context: contextT
 
-  constructor ({ key, path, runtime_path, message, context }:
-  { key: string, path?: string[], runtime_path?: string[], message: string, context: contextT }) {
+  constructor({
+    key,
+    path,
+    runtime_path,
+    message,
+    context,
+  }: {
+    key: string
+    path?: string[]
+    runtime_path?: string[]
+    message: string
+    context: contextT
+  }) {
     this.key = key
     this.path = path ?? []
     this.runtime_path = runtime_path ?? []

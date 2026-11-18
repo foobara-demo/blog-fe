@@ -1,4 +1,3 @@
-import React from 'react'
 import './AuthPages.css'
 import RegisterForm from './domains/forms/FoobaraDemo/BlogAuth/RegisterForm'
 

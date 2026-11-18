@@ -1,4 +1,3 @@
-import React from 'react'
 import './CreateArticle.css'
 import StartNewArticleForm from './domains/forms/FoobaraDemo/Blog/StartNewArticleForm'
 

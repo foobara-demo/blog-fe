@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router'
 import useQuery from './domains/hooks/useQuery'
 import { FindArticle } from './domains/FoobaraDemo/Blog/FindArticle'

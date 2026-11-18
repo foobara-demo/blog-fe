@@ -1,4 +1,3 @@
-import React from 'react'
 import './AuthPages.css'
 import LoginForm from './domains/forms/Foobara/Auth/LoginForm'
 

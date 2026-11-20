@@ -90,9 +90,9 @@ GEM
     foobara-typescript-react-command-form-generator (1.3.0)
       foobara (>= 0.1.1, < 2.0.0)
       foobara-typescript-remote-command-generator (< 2.0.0)
-    foobara-typescript-remote-command-generator (1.5.1)
+    foobara-typescript-remote-command-generator (1.5.2)
       foobara (>= 0.1.16, < 2.0.0)
-      foobara-files-generator (< 2.0.0)
+      foobara-files-generator (>= 0.2.3, < 2.0.0)
     foobara-util (1.1.1)
     foobify-rails-app (0.0.13)
       foobara (>= 0.3.0, < 2.0.0)
@@ -105,7 +105,7 @@ GEM
     lint_roller (1.1.0)
     method_source (1.1.0)
     parallel (2.3.0)
-    parser (3.3.13.0)
+    parser (3.3.14.0)
       ast (~> 2.4.1)
       racc
     prism (2.1.0)
@@ -140,7 +140,7 @@ GEM
       rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.52.0)
+    rubocop-ast (1.53.0)
       ast (~> 2.4)
       parser (>= 3.3.7.2)
       prism (>= 1.7)
@@ -203,7 +203,7 @@ CHECKSUMS
   foobara-sh-cli-connector-generator (0.2.0) sha256=2fce97c0a7bf72d9b9ec8d5226ace7b6f253e3492cc22e5c12517fdcf1c8ceb7
   foobara-type-generator (0.0.4) sha256=51d08bbc50dfcde935d45a3cceb035dc0bae71e761c8aba03288573d5f7bc811
   foobara-typescript-react-command-form-generator (1.3.0) sha256=325a844a73de50326822d99e00e9dbc3fae4f9a89b37bc3f7a484f639b0fb0d0
-  foobara-typescript-remote-command-generator (1.5.1) sha256=39e3853c9cb577e7cb31b4e0cb33fb7c1e1dee937e771de5d06780ea94f73aff
+  foobara-typescript-remote-command-generator (1.5.2) sha256=10ba3b5ce13175dcb025b95f1450c637ed467586e74da7612626e147b829024f
   foobara-util (1.1.1) sha256=d4f37678a817a6486c032e975997eeda56399e9b47d7ea175bdb798e8a873400
   foobify-rails-app (0.0.13) sha256=62c42768633d41867a675fde4dc214305f5815ed18b752679f3e16754cb7765b
   inheritable-thread-vars (0.0.3) sha256=2fe4296a625a0abd8174e39003a0a5a6635def31ddfe2c229921a219ba9e0724
@@ -213,7 +213,7 @@ CHECKSUMS
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
   method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
   parallel (2.3.0) sha256=f75a3e904101ce6a1ccb6b8dc800cbafd42166d83330192438dcf29395167a6f
-  parser (3.3.13.0) sha256=e02f9b63c2fe05b0c68f692ba4df89b3cb113b663964f75d988fbebfd6c3deca
+  parser (3.3.14.0) sha256=62f8f76af7b919425ee2d811880e9dcb8011ab40bfd59970dfb583141697e58f
   prism (2.1.0) sha256=1c0a7c6dea0e93183390fb123f007564dbe663198e2f86ad87204151147601f3
   prism (2.1.0-aarch64-linux-gnu) sha256=808dddc72def68e1a0463689414c97e0ba211938eddbab05387a4844aa2b3ec2
   prism (2.1.0-aarch64-linux-musl) sha256=dd1a0732620c1e575dabb07a297a62911fabd72f8e20ce850b522a866f877930
@@ -230,7 +230,7 @@ CHECKSUMS
   regexp_parser (2.13.4) sha256=1d0547814f57e6f00946957bd0ca201bc42f42cfb08eee89df60998aedcd8a3b
   reline (0.7.0) sha256=5b012d8e55dbf9d450f12bde2cf7d15ff546ae80b3f8f3b30e570d431815583d
   rubocop (1.92.3) sha256=fd77feac46e8e91c3a534f868a1702c59f5bf8173515fd00a3c6ce1198672ff6
-  rubocop-ast (1.52.0) sha256=18d5c58fe4e59c9a9222172dc5ba4c52642d445ce4e696ed86646beea675fe8d
+  rubocop-ast (1.53.0) sha256=027984d28485d6502ae4c72f9341080f54f538599f5dbb54f81875a4ddcad574
   rubocop-rake (0.7.1) sha256=3797f2b6810c3e9df7376c26d5f44f3475eda59eb1adc38e6f62ecf027cbae4d
   rubocop-rspec (3.10.2) sha256=0b3e2ecc592cd10ecbf0095bb58d1e357905276e069643523cc19eb7495f65e2
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
